@@ -16,6 +16,9 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField]
     private PlayerHealth health;
 
+    [SerializeField]
+    private string controllerAButton = "Fire1Controller";
+
     private bool isAttacking;
     private Animator animator;
     private AudioSource sfxAudio;
@@ -29,7 +32,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") || (Input.GetButtonDown(controllerAButton)))
         {
             if (!isAttacking)
             {

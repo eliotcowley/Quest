@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class InputManager : MonoBehaviour
 {
@@ -69,7 +70,12 @@ public class InputManager : MonoBehaviour
                 else
                 {   //It's a tap
                     //TAP CODE HERE
-                }
+                    if (PlayerHealth.canRestart)
+                    {
+                        // Restart level
+                        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                    }
+                }
 
             }
         }

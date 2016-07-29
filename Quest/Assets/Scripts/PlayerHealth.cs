@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
-using System;
 using System.Linq;
-using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -21,10 +21,19 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField]
     private GameObject gameOver;
 
+    [SerializeField]
+    private Text restartText;
+
+    [SerializeField]
+    private string controllerAButton = "Fire1Controller";
+
     private List<GameObject> hearts;
 
     [HideInInspector]
     public int currentHealth;
+
+    [HideInInspector]
+    public static bool canRestart = false;
 
     // Use this for initialization
     void Start ()
@@ -40,6 +49,27 @@ public class PlayerHealth : MonoBehaviour
         hearts.Sort((x, y) => string.Compare(x.name, y.name));
         Debug.Log(string.Join(",", hearts.Select(h => h.name).ToArray()));
         UpdateHearts();
+        Debug.Log("Number of controllers detected: " + Input.GetJoystickNames().Length);
+    }
+
+    void Update()
+    {
+        if (canRestart)
+        {
+#if UNITY_ANDROID
+
+#endif
+            // Xbox controller connected
+            if (Input.GetJoystickNames().Length > 0)
+            {
+                // Restart
+                if (Input.GetButtonDown(controllerAButton))
+                {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                    canRestart = false;
+                }
+            }
+        }
     }
 
     public void UpdateHearts()
@@ -62,8 +92,20 @@ public class PlayerHealth : MonoBehaviour
             UpdateHearts();
             if (currentHealth <= 0)
             {
+                // Game over
                 player.SetActive(false);
+
+#if UNITY_ANDROID
+                restartText.text = "Tap to restart";
+#endif
+
+                if (Input.GetJoystickNames().Length > 0)
+                {
+                    restartText.text = "Press A to restart";
+                }
+
                 gameOver.SetActive(true);
+                canRestart = true;
             }
         }
     }

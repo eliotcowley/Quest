@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
-using System.Collections;
 using EliotScripts.ObjectPool;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour
     public int coins;
 
     public int scrollSpeed;
+
+    [SerializeField]
+    private string restartButton = "Restart";
 
     private int currentObj;
 
@@ -24,5 +27,14 @@ public class GameManager : MonoBehaviour
         pool = GetComponent<ObjectPool>();
         coins = 0;
         Random.seed = 42;   // So long, and thanks for all the fish
+    }
+
+    void Update()
+    {
+        // Restart the level
+        if (Input.GetButtonDown(restartButton))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 }
