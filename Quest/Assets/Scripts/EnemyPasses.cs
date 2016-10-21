@@ -13,7 +13,7 @@ public class EnemyPasses : MonoBehaviour
     {
         if (other.tag == enemyTag)
         {
-            health.ChangeHealth(-1);
+            //health.ChangeHealth(-1);
         }
     }
 }

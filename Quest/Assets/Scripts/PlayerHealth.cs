@@ -88,6 +88,13 @@ public class PlayerHealth : MonoBehaviour
     {
         if (player.activeSelf)
         {
+            if (amount > 0)
+            {
+                if (currentHealth >= maxHealth)
+                {
+                    return;
+                }
+            }
             currentHealth += amount;
             UpdateHearts();
             if (currentHealth <= 0)

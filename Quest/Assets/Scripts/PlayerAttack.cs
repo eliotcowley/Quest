@@ -32,15 +32,21 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
+        if (Pause.paused) return;
         if (Input.GetButtonDown("Fire1") || (Input.GetButtonDown(controllerAButton)))
         {
-            if (!isAttacking)
-            {
-                isAttacking = true;
-                animator.SetTrigger("Attack");
-                sfxAudio.clip = sfxMixer.clips[1];
-                sfxAudio.PlayDelayed(0.3f);
-            }
+            Attack();
+        }
+    }
+
+    public void Attack()
+    {
+        if (!isAttacking)
+        {
+            isAttacking = true;
+            animator.SetTrigger("Attack");
+            sfxAudio.clip = sfxMixer.clips[1];
+            sfxAudio.PlayDelayed(0.3f);
         }
     }
 
@@ -49,7 +55,7 @@ public class PlayerAttack : MonoBehaviour
         isAttacking = false;
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == enemyTag)
         {

@@ -34,7 +34,14 @@ public class GameManager : MonoBehaviour
         // Restart the level
         if (Input.GetButtonDown(restartButton))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            Restart();
         }
+    }
+
+    public void Restart()
+    {
+        Time.timeScale = 1f;
+        Pause.paused = false;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

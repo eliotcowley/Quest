@@ -8,6 +8,7 @@ public class SpawnableObjectList : MonoBehaviour
     public static GameObject coinPrefab;
     public static GameObject ghostPrefab;
     public static SpawnableObject[] objects;
+    public static GameObject heartPrefab;
 
     public void Start()
     {
@@ -19,6 +20,7 @@ public class SpawnableObjectList : MonoBehaviour
         spawnObjects = GetComponent<SpawnObjects>();
         coinPrefab = spawnObjects.coinPrefab;
         ghostPrefab = spawnObjects.ghostPrefab;
+        heartPrefab = spawnObjects.heartPrefab;
 
         objects = new[]
         {
@@ -47,7 +49,8 @@ public class SpawnableObjectList : MonoBehaviour
             new SpawnableObject(1f, ghostPrefab, 0),
             new SpawnableObject(0.5f, coinPrefab, 1),
             new SpawnableObject(0.5f, coinPrefab, 0),
-            new SpawnableObject(1f, ghostPrefab, 2)
+            new SpawnableObject(1f, ghostPrefab, 2),
+            new SpawnableObject(1f, heartPrefab, 1)
         };
     }
 }

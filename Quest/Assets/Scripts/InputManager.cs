@@ -12,13 +12,33 @@ public class InputManager : MonoBehaviour
     private float dragDistance;  //Distance needed for a swipe to register
 
     [SerializeField]
-    private PlayerMovement player;
+    private PlayerMovement playerMovement;
+
+    [SerializeField]
+    private PlayerAttack playerAttack;
+
+    [SerializeField]
+    private Transform pauseButton;
+
+    [SerializeField]
+    private float distanceFromPauseButton = 10f;
 
     private bool canUseAxis = true;
 
     // Update is called once per frame
     void Update()
     {
+        // DEBUG 
+        if (Input.GetMouseButtonDown(0))
+        {
+            float mouseToPauseButtonDistance = Vector2.Distance(Input.mousePosition, pauseButton.position);
+            if ((mouseToPauseButtonDistance > distanceFromPauseButton) && (!Pause.paused))
+            {
+                Debug.Log("Distance from mouse to pause button: " + mouseToPauseButtonDistance);
+                playerAttack.Attack();
+            }
+        }
+
         // TOUCH ---------------------------------------------------------------------------------
 
         //Examine the touch inputs
@@ -57,13 +77,13 @@ public class InputManager : MonoBehaviour
                         {   //Up move
                             //MOVE UP CODE HERE
                             Debug.Log("Swipe up");
-                            player.MoveUp();
+                            playerMovement.MoveUp();
                         }
                         else
                         {   //Down move
                             //MOVE DOWN CODE HERE
                             Debug.Log("Swipe down");
-                            player.MoveDown();
+                            playerMovement.MoveDown();
                         }
                     }
                 }
@@ -74,6 +94,10 @@ public class InputManager : MonoBehaviour
                     {
                         // Restart level
                         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                    }
+                    else if ((Vector2.Distance(lp, pauseButton.position) > distanceFromPauseButton) && (!Pause.paused))
+                    {
+                        playerAttack.Attack();
                     }
                 }
 

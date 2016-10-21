@@ -8,6 +8,7 @@ TagManager:
   - Decor
   - Coin
   - Enemy
+  - Heart
   layers:
   - Default
   - TransparentFX

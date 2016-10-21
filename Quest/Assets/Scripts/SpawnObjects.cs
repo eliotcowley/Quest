@@ -23,6 +23,7 @@ public class SpawnObjects : MonoBehaviour
 
     public GameObject coinPrefab;
     public GameObject ghostPrefab;
+    public GameObject heartPrefab;
 
     private void Start()
     {
@@ -51,6 +52,11 @@ public class SpawnObjects : MonoBehaviour
             case "Enemy":
                 prefab = pool.PullFromPool("Enemy");
                 obj = ghostPrefab;
+                break;
+
+            case "Heart":
+                prefab = pool.PullFromPool("Heart");
+                obj = heartPrefab;
                 break;
 
             default:

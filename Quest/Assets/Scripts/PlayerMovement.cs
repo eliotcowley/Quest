@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Pause.paused) return;
         if (Input.GetButtonDown("Up") || inputManager.GetDpadUp())
         {
             MoveUp();
