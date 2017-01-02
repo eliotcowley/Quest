@@ -53,9 +53,18 @@ public class Pause : MonoBehaviour
             paused = true;
             Time.timeScale = 0f;
             musicAudioSource.Pause();
-            resumeButton.Select();
+            //resumeButton.Select();
             pauseButton.interactable = false;
         }
         
+    }
+
+    public void Quit()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
     }
 }

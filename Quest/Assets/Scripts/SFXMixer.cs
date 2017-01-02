@@ -1,19 +1,27 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class SFXMixer : MonoBehaviour
 {
     public AudioClip[] clips;
-
-    // Use this for initialization
-    void Start()
+    
+    public enum Sounds
     {
-
+        Coin,
+        SwordSwing,
+        Heart,
+        GhostHit
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    private AudioSource audioSource;
 
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
+    public void PlaySound(Sounds sound, float delay = 0f)
+    {
+        audioSource.clip = clips[(int)sound];
+        audioSource.PlayDelayed(delay);
     }
 }

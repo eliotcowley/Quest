@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 using EliotScripts.ObjectPool;
 
 public class PlayerAttack : MonoBehaviour
@@ -45,8 +44,7 @@ public class PlayerAttack : MonoBehaviour
         {
             isAttacking = true;
             animator.SetTrigger("Attack");
-            sfxAudio.clip = sfxMixer.clips[1];
-            sfxAudio.PlayDelayed(0.3f);
+            sfxMixer.PlaySound(SFXMixer.Sounds.SwordSwing, 0.3f);
         }
     }
 
@@ -66,6 +64,7 @@ public class PlayerAttack : MonoBehaviour
             else
             {
                 health.ChangeHealth(-1);
+                sfxMixer.PlaySound(SFXMixer.Sounds.GhostHit);
             }
         }
     }

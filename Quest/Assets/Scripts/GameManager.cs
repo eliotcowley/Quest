@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
         }
         pool = GetComponent<ObjectPool>();
         coins = 0;
-        Random.seed = 42;   // So long, and thanks for all the fish
+        Random.InitState(42); // So long, and thanks for all the fish
     }
 
     void Update()
