@@ -1,0 +1,193 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1471331687046388}
+  m_IsPrefabParent: 1
+--- !u!1 &1471331687046388
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4732540131463322}
+  - component: {fileID: 114624115540590614}
+  - component: {fileID: 114288300266762438}
+  - component: {fileID: 114887080412548060}
+  - component: {fileID: 114986832221182118}
+  - component: {fileID: 114855821012786222}
+  - component: {fileID: 114982745894178704}
+  - component: {fileID: 114538813813073644}
+  - component: {fileID: 114870294160969222}
+  - component: {fileID: 114104629699329550}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: GameController
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4732540131463322
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1471331687046388}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114104629699329550
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1471331687046388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 468ec008fcef0c345ac33b305c65e4df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseButton: {fileID: 0}
+--- !u!114 &114288300266762438
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1471331687046388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fab08a2511734644b1265e6230bd28d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pool: {fileID: 0}
+  coins: 0
+  scrollSpeed: 100
+  restartButton: Restart
+--- !u!114 &114538813813073644
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1471331687046388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22db944520b177e429836d34ebfa9db5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dragDistance: 100
+  playerMovement: {fileID: 0}
+  playerAttack: {fileID: 0}
+  pauseButton: {fileID: 0}
+  distanceFromPauseButton: 100
+--- !u!114 &114624115540590614
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1471331687046388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2884207fb2f355748b99030ce6488d21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positions:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  maxTime: 10
+  decorPrefab: {fileID: 140034, guid: 3f03a73fe03e56044a5e9e40af4f7c00, type: 2}
+  pool: {fileID: 114887080412548060}
+--- !u!114 &114855821012786222
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1471331687046388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca5c370d379ffd94198aa778347beee1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114870294160969222
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1471331687046388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69fb2f708bf9376408b4f67348c7756e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseButtonString: Pause
+  pauseScreen: {fileID: 0}
+  musicAudioSource: {fileID: 0}
+  resumeButton: {fileID: 0}
+  pauseButton: {fileID: 0}
+--- !u!114 &114887080412548060
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1471331687046388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28af5368e3691f1428a52e79512ffc08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114982745894178704
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1471331687046388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70c4596702c454a4fb836b62d86890e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 3
+  heartPrefab: {fileID: 169108, guid: 9af6ba67f9e83ce458fbe136e1768825, type: 2}
+  heartStartingPosition: {fileID: 0}
+  player: {fileID: 0}
+  gameOver: {fileID: 0}
+  restartText: {fileID: 0}
+  controllerAButton: Fire1Controller
+  sfxMixer: {fileID: 0}
+  currentHealth: 0
+--- !u!114 &114986832221182118
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1471331687046388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7aa563f616a64844d9a60055ab93f977, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positions:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  pool: {fileID: 114887080412548060}
+  startTime: 8.5
+  beatLength: 1.32
+  music: {fileID: 0}
+  coinPrefab: {fileID: 114522, guid: bef6e28a1701c414994df353091aa017, type: 2}
+  ghostPrefab: {fileID: 144734, guid: 33a2877c3a6b15d469e3dc46e98e3f2e, type: 2}
+  heartPrefab: {fileID: 1000013558697416, guid: b12508f691959c642865c5a38c3dd38f,
+    type: 2}
