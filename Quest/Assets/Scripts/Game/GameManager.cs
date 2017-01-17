@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
         coins = 0;
         //Random.InitState(42); // So long, and thanks for all the fish
         UnityEngine.Random.InitState(DateTime.Now.Millisecond);
+        Debug.Log("Joysticks connected: " + InputManager.IsGamepadConnected());
     }
 
     void Update()

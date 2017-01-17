@@ -19,8 +19,8 @@ public class Tutorial : MonoBehaviour
 
     private void Start()
     {
-        moveText.GetComponent<Text>().text = "Use " + (InputManager.usingJoyStick ? "left stick " : "arrow keys ") + "to switch lanes";
-        swordText.GetComponent<Text>().text = "Press " + (InputManager.usingJoyStick ? "A " : "left ctrl ") + "to swing sword";
+        moveText.GetComponent<Text>().text = "Use " + (InputManager.IsGamepadConnected() ? "left stick " : "arrow keys ") + "to switch lanes";
+        swordText.GetComponent<Text>().text = "Press " + (InputManager.IsGamepadConnected() ? "A " : "left ctrl ") + "to swing sword";
     }
 
     public void OnBeat(Beat beat)

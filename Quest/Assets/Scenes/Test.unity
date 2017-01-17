@@ -1799,6 +1799,11 @@ Prefab:
       value: 
       objectReference: {fileID: 1946549632522700, guid: d737129d5a250564baccf72cce32687e,
         type: 2}
+    - target: {fileID: 114888475780750712, guid: 7c55aedc21a6cfd4d9eb300d7de815bb,
+        type: 2}
+      propertyPath: hurtFlashTime
+      value: 0.25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7c55aedc21a6cfd4d9eb300d7de815bb, type: 2}
   m_IsPrefabParent: 0

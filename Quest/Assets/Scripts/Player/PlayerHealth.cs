@@ -52,7 +52,7 @@ public class PlayerHealth : MonoBehaviour
         hearts.Sort((x, y) => string.Compare(x.name, y.name));
         //Debug.Log(string.Join(",", hearts.Select(h => h.name).ToArray()));
         UpdateHearts();
-        Debug.Log("Number of controllers detected: " + Input.GetJoystickNames().Length);
+        //Debug.Log("Number of controllers detected: " + Input.GetJoystickNames().Length);
     }
 
     void Update()
@@ -63,7 +63,7 @@ public class PlayerHealth : MonoBehaviour
 
 #endif
             // Xbox controller connected
-            if (Input.GetJoystickNames().Length > 0)
+            if (InputManager.IsGamepadConnected())
             {
                 // Restart
                 if (Input.GetButtonDown(controllerAButton))
@@ -109,7 +109,7 @@ public class PlayerHealth : MonoBehaviour
                 restartText.text = "Tap to restart";
 #endif
 
-                if (Input.GetJoystickNames().Length > 0)
+                if (InputManager.IsGamepadConnected())
                 {
                     restartText.text = "Press A to restart";
                 }

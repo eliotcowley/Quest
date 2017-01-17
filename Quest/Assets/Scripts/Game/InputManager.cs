@@ -4,8 +4,6 @@ using UnityEngine.SceneManagement;
 
 public class InputManager : MonoBehaviour
 {
-    public static bool usingJoyStick;
-
     //First establish some variables
     private Vector3 fp; //First finger position
     private Vector3 lp; //Last finger position
@@ -27,11 +25,6 @@ public class InputManager : MonoBehaviour
 
     private bool canUseAxis = true;
     private string dpadY = "DpadY";
-
-    private void Awake()
-    {
-        usingJoyStick = (Input.GetJoystickNames().Length > 0);
-    }
 
     // Update is called once per frame
     void Update()
@@ -146,5 +139,26 @@ public class InputManager : MonoBehaviour
             }
         }
         return false;
+    }
+
+    public static bool IsGamepadConnected()
+    {
+        string[] joystickNames = Input.GetJoystickNames();
+
+        if (joystickNames.Length < 1)
+        {
+            return false;
+        }
+
+        foreach (string joystickName in joystickNames)
+        {
+            if (joystickName == string.Empty)
+            {
+                return false;
+            }
+            //Debug.Log(joystickName);
+        }
+
+        return true;
     }
 }

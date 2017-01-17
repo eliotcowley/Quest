@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
 using EliotScripts.ObjectPool;
+using System.Collections;
 
 public class PlayerAttack : MonoBehaviour
 {
     public string particlesTag = "Particles";
     public GameObject particlesPrefab;
+    public float hurtFlashTime = 1f;
+    public int hurtFlashes = 2;
 
     [SerializeField]
     private SFXMixer sfxMixer;
@@ -24,12 +27,16 @@ public class PlayerAttack : MonoBehaviour
     private bool isAttacking;
     private Animator animator;
     private AudioSource sfxAudio;
+    private Material material;
+    private WaitForSeconds hurtFlashSeconds;
 
     private void Start()
     {
         isAttacking = false;
         animator = GetComponent<Animator>();
         sfxAudio = sfxMixer.GetComponent<AudioSource>();
+        material = GetComponent<Renderer>().material;
+        hurtFlashSeconds = new WaitForSeconds(hurtFlashTime);
     }
 
     private void Update()
@@ -79,7 +86,24 @@ public class PlayerAttack : MonoBehaviour
             {
                 health.ChangeHealth(-1);
                 sfxMixer.PlaySound(SFXMixer.Sounds.GhostHit);
+                if (gameObject.activeSelf)
+                {
+                    StartCoroutine(FlashRed());
+                }
             }
+        }
+    }
+
+    private IEnumerator FlashRed()
+    {
+        int i = hurtFlashes;
+        while (i > 0)
+        {
+            material.color = Color.red;
+            yield return hurtFlashSeconds;
+            material.color = Color.white;
+            yield return hurtFlashSeconds;
+            i--;
         }
     }
 }
