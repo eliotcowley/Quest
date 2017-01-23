@@ -11,7 +11,9 @@ public class SFXMixer : MonoBehaviour
         Heart,
         GhostHit,
         PlayerDie,
-        GhostKill
+        GhostKill,
+        Star,
+        Diamond
     }
 
     private AudioSource[] audioSources;

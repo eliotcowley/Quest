@@ -4,10 +4,12 @@ using System.Collections;
 public class ObjectScrolling : MonoBehaviour
 {    
     private GameManager gm;
+    private ParticleSystem ps;
 
     void Start()
     {
         gm = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+        ps = GetComponent<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -21,6 +23,14 @@ public class ObjectScrolling : MonoBehaviour
         if (other.gameObject.tag == "GarbageCollector")
         {
             gm.pool.AddToPool(this.gameObject);
+        }
+    }
+
+    private void OnBecameInvisible()
+    {
+        if (ps != null)
+        {
+            gm.pool.AddToPool(gameObject);
         }
     }
 }

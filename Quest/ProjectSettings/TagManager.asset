@@ -10,6 +10,10 @@ TagManager:
   - Enemy
   - Heart
   - Particles
+  - Star
+  - BlueDiamond
+  - GreenDiamond
+  - OrangeDiamond
   layers:
   - Default
   - TransparentFX
@@ -49,4 +53,7 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Overlays
+    uniqueID: 1576751941
     locked: 0

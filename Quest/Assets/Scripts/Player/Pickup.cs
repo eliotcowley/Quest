@@ -4,6 +4,10 @@ using UnityEngine.UI;
 
 public class Pickup : MonoBehaviour
 {
+    public GameObject blueDiamondUI;
+    public GameObject greenDiamondUI;
+    public GameObject orangeDiamondUI;
+
     [SerializeField]
     private GameManager gm;
 
@@ -19,16 +23,32 @@ public class Pickup : MonoBehaviour
     [SerializeField]
     private const string heartTag = "Heart";
 
+    [SerializeField]
+    private const string starTag = "Star";
+
+    [SerializeField]
+    private const string blueDiamondTag = "BlueDiamond";
+
+    [SerializeField]
+    private const string greenDiamondTag = "GreenDiamond";
+
+    [SerializeField]
+    private const string orangeDiamondTag = "OrangeDiamond";
+
     private AudioSource sfxAudio;
+    private int diamondsThisLevel = 0;
 
     [SerializeField]
     private PlayerHealth health;
+
+    private PlayerAttack playerAttack;
 
     // Use this for initialization
     void Start()
     {
         coinText.text = "0";
         sfxAudio = sfxMixer.GetComponent<AudioSource>();
+        playerAttack = GetComponent<PlayerAttack>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -48,6 +68,36 @@ public class Pickup : MonoBehaviour
                 gm.pool.AddToPool(other.gameObject);
                 sfxAudio.clip = sfxMixer.clips[2];
                 sfxAudio.Play();
+                break;
+
+            case starTag:
+                playerAttack.SetInvincible();
+                gm.pool.AddToPool(other.gameObject);
+                sfxMixer.PlaySound(SFXMixer.Sounds.Star);
+                break;
+
+            case blueDiamondTag:
+                blueDiamondUI.SetActive(true);
+                gm.diamonds++;
+                gm.pool.AddToPool(other.gameObject);
+                sfxMixer.PlaySound(SFXMixer.Sounds.Diamond);
+                diamondsThisLevel++;
+                break;
+
+            case greenDiamondTag:
+                greenDiamondUI.SetActive(true);
+                gm.diamonds++;
+                gm.pool.AddToPool(other.gameObject);
+                sfxMixer.PlaySound(SFXMixer.Sounds.Diamond);
+                diamondsThisLevel++;
+                break;
+
+            case orangeDiamondTag:
+                orangeDiamondUI.SetActive(true);
+                gm.diamonds++;
+                gm.pool.AddToPool(other.gameObject);
+                sfxMixer.PlaySound(SFXMixer.Sounds.Diamond);
+                diamondsThisLevel++;
                 break;
         }
     }

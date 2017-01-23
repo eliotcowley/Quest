@@ -4,6 +4,14 @@ using EliotScripts.ObjectPool;
 
 public class SpawnObjects : MonoBehaviour
 {
+    public GameObject coinPrefab;
+    public GameObject ghostPrefab;
+    public GameObject heartPrefab;
+    public GameObject starPrefab;
+    public GameObject blueDiamondPrefab;
+    public GameObject greenDiamondPrefab;
+    public GameObject orangeDiamondPrefab;
+
     [SerializeField]
     private Transform[] positions;
     
@@ -37,37 +45,16 @@ public class SpawnObjects : MonoBehaviour
     private int currentBeat = 0;
     private int nextBeat;
 
-    public GameObject coinPrefab;
-    public GameObject ghostPrefab;
-    public GameObject heartPrefab;
-
     private void Start()
     {
-        //double initTime = AudioSettings.dspTime;
-        //music.PlayScheduled(initTime + startDelay);
-
-        //nextTime = startTime;
         index = 0;
-        //InitSpawn();
-        //nextSample = startBeat * bpm;
-        //music.Play();
         nextBeat = startBeat;
     }
-
-    private void Update()
-    {
-        //currentSample = (float)AudioSettings.dspTime * music.clip.frequency;
-        //if (currentSample >= nextSample)
-        //{
-        //    Spawn();
-        //}
-        //Debug.Log(music.timeSamples);
-    }
-
 
     public void Spawn()
     {
         currentBeat++;
+
         if (!SpawnableObjectList.prefabsSet || (index >= SpawnableObjectList.objects.Length) || (currentBeat < nextBeat))
         {
             return;
@@ -101,11 +88,32 @@ public class SpawnObjects : MonoBehaviour
                 obj = heartPrefab;
                 break;
 
+            case "Star":
+                prefab = pool.PullFromPool("Star");
+                obj = starPrefab;
+                break;
+
+            case "BlueDiamond":
+                prefab = pool.PullFromPool("BlueDiamond");
+                obj = blueDiamondPrefab;
+                break;
+
+            case "GreenDiamond":
+                prefab = pool.PullFromPool("GreenDiamond");
+                obj = greenDiamondPrefab;
+                break;
+
+            case "OrangeDiamond":
+                prefab = pool.PullFromPool("OrangeDiamond");
+                obj = orangeDiamondPrefab;
+                break;
+
             default:
                 prefab = pool.PullFromPool("Coin");
                 obj = coinPrefab;
                 break; 
         }
+
         if (prefab == null)
         {
             Instantiate(obj, positions[nextPosition].position, Quaternion.identity);
@@ -114,14 +122,12 @@ public class SpawnObjects : MonoBehaviour
         {
             prefab.transform.position = positions[nextPosition].position;
         }
+
         if (index < SpawnableObjectList.objects.Length)
         {
-            //nextTime = SpawnableObjectList.objects[index].beatNum * beatLength;
-            //Invoke("Spawn", nextTime);
-            //nextSample += SpawnableObjectList.objects[index].beatNum * bpm;
             nextBeat = SpawnableObjectList.objects[index].beatNum;
         }
-        //Debug.Log("Audio Sample: " + music.timeSamples);
+        
         currentBeat = 0;
     }
 

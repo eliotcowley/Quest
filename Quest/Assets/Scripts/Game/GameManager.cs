@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public int coins;
 
+    [HideInInspector]
+    public int diamonds;
+
     public int scrollSpeed;
     public RhythmTool rhythmTool;
 

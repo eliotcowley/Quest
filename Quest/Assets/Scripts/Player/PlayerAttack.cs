@@ -8,6 +8,7 @@ public class PlayerAttack : MonoBehaviour
     public GameObject particlesPrefab;
     public float hurtFlashTime = 1f;
     public int hurtFlashes = 2;
+    public int invincibleBeats = 16;
 
     [SerializeField]
     private SFXMixer sfxMixer;
@@ -29,6 +30,9 @@ public class PlayerAttack : MonoBehaviour
     private AudioSource sfxAudio;
     private Material material;
     private WaitForSeconds hurtFlashSeconds;
+    private bool isInvincible = false;
+    private ParticleSystem invincibleParticles;
+    private int beatCount;
 
     private void Start()
     {
@@ -37,6 +41,8 @@ public class PlayerAttack : MonoBehaviour
         sfxAudio = sfxMixer.GetComponent<AudioSource>();
         material = GetComponent<Renderer>().material;
         hurtFlashSeconds = new WaitForSeconds(hurtFlashTime);
+        invincibleParticles = GetComponentInChildren<ParticleSystem>();
+        beatCount = invincibleBeats;
     }
 
     private void Update()
@@ -67,7 +73,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if (other.gameObject.tag == enemyTag)
         {
-            if (isAttacking)
+            if (isAttacking || isInvincible)
             {
                 pool.AddToPool(other.gameObject);
                 sfxMixer.PlaySound(SFXMixer.Sounds.GhostKill);
@@ -104,6 +110,36 @@ public class PlayerAttack : MonoBehaviour
             material.color = Color.white;
             yield return hurtFlashSeconds;
             i--;
+        }
+    }
+
+    public void SetInvincible()
+    {
+        isInvincible = true;
+        material.color = Color.yellow;
+        invincibleParticles.Play();
+    }
+
+    public void SetNormal()
+    {
+        isInvincible = false;
+        material.color = Color.white;
+        invincibleParticles.Stop();
+        beatCount = invincibleBeats;
+    }
+
+    public void OnBeat()
+    {
+        if (isInvincible)
+        {
+            if (beatCount <= 0)
+            {
+                SetNormal();
+            }
+            else
+            {
+                beatCount--;
+            }
         }
     }
 }

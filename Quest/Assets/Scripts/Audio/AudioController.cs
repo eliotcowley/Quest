@@ -16,18 +16,13 @@ public class AudioController : MonoBehaviour
         rhythmTool.NewSong(audioClip);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     private void OnReadyToPlay()
     {
         if (rhythmTool.songLoaded)
         {
             Debug.Log("Song loaded");
         }
+
         rhythmTool.Play();
     }
 }
