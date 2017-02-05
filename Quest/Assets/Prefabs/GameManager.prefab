@@ -73,7 +73,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pool: {fileID: 0}
   coins: 0
+  diamonds: 0
   scrollSpeed: 100
+  rhythmTool: {fileID: 0}
   restartButton: Restart
 --- !u!114 &114538813813073644
 MonoBehaviour:
@@ -107,8 +109,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  maxTime: 10
-  decorPrefab: {fileID: 140034, guid: 3f03a73fe03e56044a5e9e40af4f7c00, type: 2}
+  maxTime: 5
+  decorPrefabs:
+  - {fileID: 140034, guid: 3f03a73fe03e56044a5e9e40af4f7c00, type: 2}
+  - {fileID: 1484194334949558, guid: 11a51b57ebf76ad4cb632802dec35d6a, type: 2}
   pool: {fileID: 114887080412548060}
 --- !u!114 &114855821012786222
 MonoBehaviour:
@@ -137,6 +141,7 @@ MonoBehaviour:
   musicAudioSource: {fileID: 0}
   resumeButton: {fileID: 0}
   pauseButton: {fileID: 0}
+  rhythmTool: {fileID: 0}
 --- !u!114 &114887080412548060
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -179,15 +184,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aa563f616a64844d9a60055ab93f977, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinPrefab: {fileID: 114522, guid: bef6e28a1701c414994df353091aa017, type: 2}
+  ghostPrefab: {fileID: 144734, guid: 33a2877c3a6b15d469e3dc46e98e3f2e, type: 2}
+  heartPrefab: {fileID: 1000013558697416, guid: b12508f691959c642865c5a38c3dd38f,
+    type: 2}
+  starPrefab: {fileID: 1026054094325564, guid: fb2d1a34f349cd44c87ea136b58e8b24, type: 2}
+  blueDiamondPrefab: {fileID: 1278090592095478, guid: 9bae74a82bda40a49a31b3dd634f3b39,
+    type: 2}
+  greenDiamondPrefab: {fileID: 1513281998109242, guid: e85686ab81e7efb44a544c66762fc8ad,
+    type: 2}
+  orangeDiamondPrefab: {fileID: 1519256256587126, guid: be97bf44794241d4dae662b25fc416c4,
+    type: 2}
   positions:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   pool: {fileID: 114887080412548060}
-  startTime: 8.5
   beatLength: 1.32
   music: {fileID: 0}
-  coinPrefab: {fileID: 114522, guid: bef6e28a1701c414994df353091aa017, type: 2}
-  ghostPrefab: {fileID: 144734, guid: 33a2877c3a6b15d469e3dc46e98e3f2e, type: 2}
-  heartPrefab: {fileID: 1000013558697416, guid: b12508f691959c642865c5a38c3dd38f,
-    type: 2}
+  startBeat: 90

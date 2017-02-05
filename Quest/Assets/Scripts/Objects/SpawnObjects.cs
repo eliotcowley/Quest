@@ -19,24 +19,14 @@ public class SpawnObjects : MonoBehaviour
     private ObjectPool pool;
 
     [SerializeField]
-    private float startTime = 8.5f;
-
-    [SerializeField]
     private float beatLength;
 
     [SerializeField]
     private AudioSource music;
 
     [SerializeField]
-    private int bpm = 92;
-
-    [SerializeField]
     private int startBeat = 88;
 
-    [SerializeField]
-    private float startDelay = 1f;
-
-    private float nextTime;
     private int nextPosition;
     private int index;
     private GameObject nextPrefab;
@@ -131,9 +121,9 @@ public class SpawnObjects : MonoBehaviour
         currentBeat = 0;
     }
 
-    private void InitSpawn()
-    {
-        Invoke("Spawn", nextTime);
-        music.Play();
-    }
+    //private void InitSpawn()
+    //{
+    //    Invoke("Spawn", nextTime);
+    //    music.Play();
+    //}
 }

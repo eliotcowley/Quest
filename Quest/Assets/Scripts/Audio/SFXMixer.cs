@@ -13,7 +13,8 @@ public class SFXMixer : MonoBehaviour
         PlayerDie,
         GhostKill,
         Star,
-        Diamond
+        Diamond,
+        Magic
     }
 
     private AudioSource[] audioSources;

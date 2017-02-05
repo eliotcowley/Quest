@@ -10,6 +10,9 @@ public class PlayerAttack : MonoBehaviour
     public int hurtFlashes = 2;
     public int invincibleBeats = 16;
 
+    [HideInInspector]
+    public static bool isAttacking;
+
     [SerializeField]
     private SFXMixer sfxMixer;
 
@@ -25,24 +28,39 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField]
     private string controllerAButton = "Fire1Controller";
 
-    private bool isAttacking;
-    private Animator animator;
-    private AudioSource sfxAudio;
-    private Material material;
+    [SerializeField]
+    private GameObject swordsman;
+
+    [SerializeField]
+    private GameObject princess;
+
+    [SerializeField]
+    private string magicTag = "Magic";
+
+    [SerializeField]
+    private GameObject magicPrefab;
+
+    private Animator swordsmanAnimator;
+    private Animator princessAnimator;
+    private Material swordsmanMaterial;
+    private Material princessMaterial;
     private WaitForSeconds hurtFlashSeconds;
     private bool isInvincible = false;
     private ParticleSystem invincibleParticles;
     private int beatCount;
+    private bool swordsmanInFront;
 
     private void Start()
     {
         isAttacking = false;
-        animator = GetComponent<Animator>();
-        sfxAudio = sfxMixer.GetComponent<AudioSource>();
-        material = GetComponent<Renderer>().material;
+        swordsmanAnimator = swordsman.GetComponent<Animator>();
+        princessAnimator = princess.GetComponent<Animator>();
+        swordsmanMaterial = swordsman.GetComponent<Renderer>().material;
+        princessMaterial = princess.GetComponent<Renderer>().material;
         hurtFlashSeconds = new WaitForSeconds(hurtFlashTime);
         invincibleParticles = GetComponentInChildren<ParticleSystem>();
         beatCount = invincibleBeats;
+        swordsmanInFront = true;
     }
 
     private void Update()
@@ -56,11 +74,25 @@ public class PlayerAttack : MonoBehaviour
 
     public void Attack()
     {
-        if (!isAttacking)
+        if (swordsmanInFront && !isAttacking)
         {
             isAttacking = true;
-            animator.SetTrigger("Attack");
+            swordsmanAnimator.SetTrigger("Attack");
             sfxMixer.PlaySound(SFXMixer.Sounds.SwordSwing, 0.3f);
+        }
+        else
+        {
+            // Uncomment this when I have animations for the princess.
+            //princessAnimator.SetTrigger("Attack");
+            sfxMixer.PlaySound(SFXMixer.Sounds.Magic);
+            GameObject magic = pool.PullFromPool(magicTag);
+
+            if (magic == null)
+            {
+                magic = Instantiate(magicPrefab);
+            }
+
+            magic.transform.position = this.transform.position;
         }
     }
 
@@ -73,20 +105,9 @@ public class PlayerAttack : MonoBehaviour
     {
         if (other.gameObject.tag == enemyTag)
         {
-            if (isAttacking || isInvincible)
+            if ((isAttacking && swordsmanInFront) || isInvincible)
             {
-                pool.AddToPool(other.gameObject);
-                sfxMixer.PlaySound(SFXMixer.Sounds.GhostKill);
-                GameObject particles = pool.PullFromPool(particlesTag);
-
-                if (particles == null)
-                {
-                    Instantiate(particlesPrefab, other.transform.position, Quaternion.identity);
-                }
-                else
-                {
-                    particles.transform.position = other.transform.position;
-                }
+                other.gameObject.GetComponent<EnemyDie>().Die();
             }
             else
             {
@@ -103,11 +124,14 @@ public class PlayerAttack : MonoBehaviour
     private IEnumerator FlashRed()
     {
         int i = hurtFlashes;
+
         while (i > 0)
         {
-            material.color = Color.red;
+            swordsmanMaterial.color = Color.red;
+            princessMaterial.color = Color.red;
             yield return hurtFlashSeconds;
-            material.color = Color.white;
+            swordsmanMaterial.color = Color.white;
+            princessMaterial.color = Color.white;
             yield return hurtFlashSeconds;
             i--;
         }
@@ -116,14 +140,16 @@ public class PlayerAttack : MonoBehaviour
     public void SetInvincible()
     {
         isInvincible = true;
-        material.color = Color.yellow;
+        swordsmanMaterial.color = Color.yellow;
+        princessMaterial.color = Color.yellow;
         invincibleParticles.Play();
     }
 
     public void SetNormal()
     {
         isInvincible = false;
-        material.color = Color.white;
+        swordsmanMaterial.color = Color.white;
+        princessMaterial.color = Color.white;
         invincibleParticles.Stop();
         beatCount = invincibleBeats;
     }

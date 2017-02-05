@@ -20,6 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4947406186370304}
   - component: {fileID: 82681123010438734}
+  - component: {fileID: 114116490093978926}
+  - component: {fileID: 114774747308953212}
+  - component: {fileID: 114643516327113794}
   m_Layer: 0
   m_Name: AudioController
   m_TagString: Untagged
@@ -241,11 +244,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d4a1e55bc237bae468812d106ea81023, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d6756320bed33a648a87e414a2990507, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -312,6 +315,120 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114116490093978926
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1365341620423622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b98103033c0b7b4b9e5336f545bf1ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114643516327113794
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1365341620423622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da07a9e155237604584b7d5e853c29b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _preCalculate: 1
+  _calculateTempo: 1
+  _storeAnalyses: 1
+  _lead: 300
+  _lastFrame: 0
+  _bpm: 0
+  _beatLength: 0
+--- !u!114 &114774747308953212
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1365341620423622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f80b5abb53477dd4b82948481e94660e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetOffset: 0
+  offset: 0
+  lastBeatTime: 0
+  currentFrame: 0
+  interpolation: 0
+  totalFrames: 0
+  onBeat:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: Spawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: OnBeat
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: OnBeat
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: RhythmEventProvider+OnBeat, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  onSubBeat:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: RhythmEventProvider+OnSubBeat, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  onOnset:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: RhythmEventProvider+OnOnset, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  onChange:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: RhythmEventProvider+OnChange, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  timingUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: RhythmEventProvider+TimingUpdate, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onFrameChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: RhythmEventProvider+OnFrameChanged, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onNewSong:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: RhythmEventProvider+OnNewSong, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &114966367268002360
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -329,3 +446,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4e946b2366cf92d4a981b175791fc85b, type: 3}
   - {fileID: 8300000, guid: 95ee7f3b67e32dc4db9ac65956e6da4d, type: 3}
   - {fileID: 8300000, guid: 217fb836e9b2a094b8040bee0ecfa7db, type: 3}
+  - {fileID: 8300000, guid: 444a8b9b3372fb047aec9efb2e3ef9d0, type: 3}
+  - {fileID: 8300000, guid: 18f4196ecff878040bbf23fd5b6642a5, type: 3}
+  - {fileID: 8300000, guid: 056a349c34d6eef4fabece0e802cfad5, type: 3}
+  - {fileID: 8300000, guid: b04127265f4f3284f94a3d26a38693af, type: 3}

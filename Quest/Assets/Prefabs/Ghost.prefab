@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 11414636}
   - component: {fileID: 6154444}
   - component: {fileID: 5063094}
+  - component: {fileID: 114116428067406484}
   m_Layer: 0
   m_Name: Ghost
   m_TagString: Enemy
@@ -95,6 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85926bf2da538e34a9d19fbd59549093, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  magicTag: Magic
 --- !u!212 &21221098
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -141,3 +143,19 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 144734}
   m_IsPrefabParent: 1
+--- !u!114 &114116428067406484
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 144734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6522a7c6d8734314ebac06e321b75873, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pool: {fileID: 114887080412548060, guid: 8d95f18396affa04e904bb85f44adaf4, type: 2}
+  sfxMixer: {fileID: 114966367268002360, guid: e7f63bad5e79fd14586b62ca403b8c6d, type: 2}
+  particlesTag: Particles
+  particlesPrefab: {fileID: 1946549632522700, guid: d737129d5a250564baccf72cce32687e,
+    type: 2}
