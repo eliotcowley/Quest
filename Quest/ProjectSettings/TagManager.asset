@@ -16,6 +16,7 @@ TagManager:
   - OrangeDiamond
   - Magic
   - SFXMixer
+  - Barrier
   layers:
   - Default
   - TransparentFX

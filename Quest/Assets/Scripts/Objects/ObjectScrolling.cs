@@ -6,6 +6,9 @@ public class ObjectScrolling : MonoBehaviour
     [SerializeField]
     private string magicTag = "Magic";
 
+    [SerializeField]
+    private string barrierTag = "Barrier";
+
     private GameManager gm;
     private ParticleSystem ps;
 
@@ -38,7 +41,7 @@ public class ObjectScrolling : MonoBehaviour
 
     private void OnBecameInvisible()
     {
-        if (ps != null)
+        if ((ps != null) || (tag == magicTag) || (tag == barrierTag))
         {
             gm.pool.AddToPool(gameObject);
         }

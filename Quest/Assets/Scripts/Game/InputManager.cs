@@ -35,7 +35,7 @@ public class InputManager : MonoBehaviour
             float mouseToPauseButtonDistance = Vector2.Distance(Input.mousePosition, pauseButton.position);
             if ((mouseToPauseButtonDistance > distanceFromPauseButton) && (!Pause.paused))
             {
-                Debug.Log("Distance from mouse to pause button: " + mouseToPauseButtonDistance);
+                //Debug.Log("Distance from mouse to pause button: " + mouseToPauseButtonDistance);
                 playerAttack.Attack();
             }
         }
@@ -66,10 +66,12 @@ public class InputManager : MonoBehaviour
                         if (lp.x > fp.x)  //If the movement was to the right
                         {   //Right move
                             //MOVE RIGHT CODE HERE
+                            playerMovement.Switch();
                         }
                         else
                         {   //Left move
                             //MOVE LEFT CODE HERE
+                            playerMovement.Switch();
                         }
                     }
                     else

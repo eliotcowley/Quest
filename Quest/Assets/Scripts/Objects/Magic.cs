@@ -5,13 +5,25 @@ using UnityEngine;
 public class Magic : MonoBehaviour
 {
     [SerializeField]
-    private string enemyTag = "Enemy";
+    private string barrierTag = "Barrier";
+
+    private GameManager gm;
+
+    private void Start()
+    {
+        gm = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == enemyTag)
+        //if (collision.tag == enemyTag)
+        //{
+        //    collision.gameObject.GetComponent<EnemyDie>().Die();
+        //}
+
+        if (collision.gameObject.tag == barrierTag)
         {
-            collision.gameObject.GetComponent<EnemyDie>().Die();
+            gm.pool.AddToPool(collision.gameObject);
         }
     }
 }

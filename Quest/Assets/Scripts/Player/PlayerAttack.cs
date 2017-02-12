@@ -13,6 +13,9 @@ public class PlayerAttack : MonoBehaviour
     [HideInInspector]
     public static bool isAttacking;
 
+    [HideInInspector]
+    public bool swordsmanInFront;
+
     [SerializeField]
     private SFXMixer sfxMixer;
 
@@ -40,6 +43,9 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField]
     private GameObject magicPrefab;
 
+    [SerializeField]
+    private float magicRate = 0.5f;
+
     private Animator swordsmanAnimator;
     private Animator princessAnimator;
     private Material swordsmanMaterial;
@@ -48,7 +54,7 @@ public class PlayerAttack : MonoBehaviour
     private bool isInvincible = false;
     private ParticleSystem invincibleParticles;
     private int beatCount;
-    private bool swordsmanInFront;
+    private bool canUseMagic = true;
 
     private void Start()
     {
@@ -80,7 +86,7 @@ public class PlayerAttack : MonoBehaviour
             swordsmanAnimator.SetTrigger("Attack");
             sfxMixer.PlaySound(SFXMixer.Sounds.SwordSwing, 0.3f);
         }
-        else
+        else if (!swordsmanInFront && canUseMagic)
         {
             // Uncomment this when I have animations for the princess.
             //princessAnimator.SetTrigger("Attack");
@@ -93,6 +99,8 @@ public class PlayerAttack : MonoBehaviour
             }
 
             magic.transform.position = this.transform.position;
+            canUseMagic = false;
+            Invoke("CanUseMagic", magicRate);
         }
     }
 
@@ -167,5 +175,10 @@ public class PlayerAttack : MonoBehaviour
                 beatCount--;
             }
         }
+    }
+
+    private void CanUseMagic()
+    {
+        canUseMagic = true;
     }
 }
