@@ -7,11 +7,13 @@ public class Tutorial : MonoBehaviour
 {
     public GameObject moveText;
     public GameObject swordText;
+    public GameObject switchText;
     public GameObject coinText;
     public RhythmTool rhythmTool;
 
-    public const int showTextBeat = 18;
-    public const int showSwordTextBeat = 50;
+    public const int showTextBeat = 10;
+    public const int showSwordTextBeat = 34;
+    public const int showSwitchTextBeat = 58;
     public const int showCoinTextBeat = 82;
     public const int textDisplayDuration = 16;
 
@@ -20,7 +22,8 @@ public class Tutorial : MonoBehaviour
     private void Start()
     {
         moveText.GetComponent<Text>().text = "Use " + (InputManager.IsGamepadConnected() ? "left stick " : "arrow keys ") + "to switch lanes";
-        swordText.GetComponent<Text>().text = "Press " + (InputManager.IsGamepadConnected() ? "A " : "left ctrl ") + "to swing sword";
+        swordText.GetComponent<Text>().text = "Press " + (InputManager.IsGamepadConnected() ? "A " : "left ctrl ") + "to attack";
+        switchText.GetComponent<Text>().text = "Press " + (InputManager.IsGamepadConnected() ? "Y " : "left shift ") + "to switch the leader";
     }
 
     public void OnBeat(Beat beat)
@@ -41,6 +44,14 @@ public class Tutorial : MonoBehaviour
 
             case (showSwordTextBeat + textDisplayDuration):
                 swordText.SetActive(false);
+                break;
+
+            case showSwitchTextBeat:
+                switchText.SetActive(true);
+                break;
+
+            case (showSwitchTextBeat + textDisplayDuration):
+                switchText.SetActive(false);
                 break;
 
             case showCoinTextBeat:
