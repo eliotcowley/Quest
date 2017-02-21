@@ -2,10 +2,10 @@ Mono path[0] = 'C:/Users/Eliot/Documents/GitHub/Quest/Quest/Builds/Standalone/Qu
 Mono path[1] = 'C:/Users/Eliot/Documents/GitHub/Quest/Quest/Builds/Standalone/Quest_Data/Mono'
 Mono config path = 'C:/Users/Eliot/Documents/GitHub/Quest/Quest/Builds/Standalone/Quest_Data/Mono/etc'
 PlayerConnection initialized from C:/Users/Eliot/Documents/GitHub/Quest/Quest/Builds/Standalone/Quest_Data (debug = 0)
-PlayerConnection initialized network socket : 0.0.0.0 55112
-Multi-casting "[IP] 192.168.1.157 [Port] 55112 [Flags] 2 [Guid] 743894809 [EditorId] 534281169 [Version] 1048832 [Id] WindowsPlayer(EliotDesktop) [Debug] 0" to [225.0.0.222:54997]...
-Started listening to [0.0.0.0:55112]
-PlayerConnection already initialized - listening to [0.0.0.0:55112]
+PlayerConnection initialized network socket : 0.0.0.0 55390
+Multi-casting "[IP] 192.168.1.157 [Port] 55390 [Flags] 2 [Guid] 384139987 [EditorId] 534281169 [Version] 1048832 [Id] WindowsPlayer(EliotDesktop) [Debug] 0" to [225.0.0.222:54997]...
+Started listening to [0.0.0.0:55390]
+PlayerConnection already initialized - listening to [0.0.0.0:55390]
 Initialize engine version: 5.5.1f1 (88d00a7498cd)
 GfxDevice: creating device client; threaded=1
 Direct3D:
@@ -27,14 +27,14 @@ Platform assembly: C:\Users\Eliot\Documents\GitHub\Quest\Quest\Builds\Standalone
 Loading C:\Users\Eliot\Documents\GitHub\Quest\Quest\Builds\Standalone\Quest_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\Eliot\Documents\GitHub\Quest\Quest\Builds\Standalone\Quest_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
 Loading C:\Users\Eliot\Documents\GitHub\Quest\Quest\Builds\Standalone\Quest_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
-- Completed reload, in  0.029 seconds
+- Completed reload, in  0.020 seconds
 Platform assembly: C:\Users\Eliot\Documents\GitHub\Quest\Quest\Builds\Standalone\Quest_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\Eliot\Documents\GitHub\Quest\Quest\Builds\Standalone\Quest_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 144Hz; virtual: 3840x1080 at -1920,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 0.858625 ms
+UnloadTime: 0.761345 ms
 Joysticks connected: False
 UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
 UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
@@ -58,6 +58,72 @@ UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave
  
 (Filename: C:/Users/Eliot/Documents/GitHub/Quest/Quest/Assets/Scripts/Audio/AudioController.cs Line: 22)
 
+Joystick connected ("Controller (XBOX 360 For Windows)").
+ 
+(Filename: C:/buildslave/unity/build/PlatformDependent/Win/RawInput.cpp Line: 1351)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.700292 ms
+System memory in use before: 57.0 MB.
+System memory in use after: 57.0 MB.
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 742.
+Total: 0.357632 ms (FindLiveObjects: 0.034048 ms CreateObjectMapping: 0.018176 ms MarkObjects: 0.285696 ms  DeleteObjects: 0.019456 ms)
+
+Joysticks connected: True
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameManager:Start() (at C:\Users\Eliot\Documents\GitHub\Quest\Quest\Assets\Scripts\Game\GameManager.cs:36)
+ 
+(Filename: C:/Users/Eliot/Documents/GitHub/Quest/Quest/Assets/Scripts/Game/GameManager.cs Line: 36)
+
+Song loaded
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+AudioController:OnReadyToPlay() (at C:\Users\Eliot\Documents\GitHub\Quest\Quest\Assets\Scripts\Audio\AudioController.cs:22)
+UnityEngine.GameObject:SendMessage(String, Object, SendMessageOptions)
+UnityEngine.GameObject:SendMessage(String, SendMessageOptions) (at C:\buildslave\unity\build\artifacts\generated\common\runtime\GameObjectBindings.gen.cs:320)
+RhythmTool:LoadNewSong(AudioClip) (at C:\Users\Eliot\Documents\GitHub\Quest\Quest\Assets\RhythmTool\Scripts\RhythmTool.cs:362)
+<QueueNewSong>c__Iterator0:MoveNext() (at C:\Users\Eliot\Documents\GitHub\Quest\Quest\Assets\RhythmTool\Scripts\RhythmTool.cs:297)
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
+ 
+(Filename: C:/Users/Eliot/Documents/GitHub/Quest/Quest/Assets/Scripts/Audio/AudioController.cs Line: 22)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.763905 ms
+System memory in use before: 57.3 MB.
+System memory in use after: 57.3 MB.
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 742.
+Total: 0.417280 ms (FindLiveObjects: 0.028160 ms CreateObjectMapping: 0.015872 ms MarkObjects: 0.361728 ms  DeleteObjects: 0.011264 ms)
+
+Joysticks connected: True
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameManager:Start() (at C:\Users\Eliot\Documents\GitHub\Quest\Quest\Assets\Scripts\Game\GameManager.cs:36)
+ 
+(Filename: C:/Users/Eliot/Documents/GitHub/Quest/Quest/Assets/Scripts/Game/GameManager.cs Line: 36)
+
+Song loaded
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+AudioController:OnReadyToPlay() (at C:\Users\Eliot\Documents\GitHub\Quest\Quest\Assets\Scripts\Audio\AudioController.cs:22)
+UnityEngine.GameObject:SendMessage(String, Object, SendMessageOptions)
+UnityEngine.GameObject:SendMessage(String, SendMessageOptions) (at C:\buildslave\unity\build\artifacts\generated\common\runtime\GameObjectBindings.gen.cs:320)
+RhythmTool:LoadNewSong(AudioClip) (at C:\Users\Eliot\Documents\GitHub\Quest\Quest\Assets\RhythmTool\Scripts\RhythmTool.cs:362)
+<QueueNewSong>c__Iterator0:MoveNext() (at C:\Users\Eliot\Documents\GitHub\Quest\Quest\Assets\RhythmTool\Scripts\RhythmTool.cs:297)
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
+ 
+(Filename: C:/Users/Eliot/Documents/GitHub/Quest/Quest/Assets/Scripts/Audio/AudioController.cs Line: 22)
+
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 17f4 -> priority: 1 
-  Thread -> id: 1450 -> priority: 1 
+  Thread -> id: 102c -> priority: 1 
+  Thread -> id: 5504 -> priority: 1 
