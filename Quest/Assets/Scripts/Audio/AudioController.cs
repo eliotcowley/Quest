@@ -4,25 +4,29 @@ using UnityEngine;
 
 public class AudioController : MonoBehaviour
 {
-    private RhythmTool rhythmTool;
-    private AudioClip audioClip;
+    [SerializeField]
+    private AudioClip[] sceneBGM;
 
-    // Use this for initialization
-    void Start()
+    private AudioSource audioSource;
+
+    public enum BGM
     {
-        rhythmTool = GetComponent<RhythmTool>();
-        audioClip = GetComponent<AudioSource>().clip;
-
-        rhythmTool.NewSong(audioClip);
+        Title = 0
     }
 
-    private void OnReadyToPlay()
+    public void Play(BGM track)
     {
-        if (rhythmTool.songLoaded)
-        {
-            Debug.Log("Song loaded");
-        }
+        audioSource.clip = sceneBGM[(int)track];
+        audioSource.Play();
+    }
 
-        rhythmTool.Play();
+    public void Stop()
+    {
+        audioSource.Stop();
+    }
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
     }
 }

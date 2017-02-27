@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class TitleManager : MonoBehaviour
@@ -19,6 +20,18 @@ public class TitleManager : MonoBehaviour
 
     [SerializeField]
     private Text resolutionText;
+
+    [SerializeField]
+    private Slider musicSlider;
+
+    [SerializeField]
+    private Slider sfxSlider;
+
+    [SerializeField]
+    private AudioMixer musicMixer;
+
+    [SerializeField]
+    private AudioMixer sfxMixer;
 
     private bool fullscreen;
     private Resolution[] resolutions;
@@ -44,6 +57,7 @@ public class TitleManager : MonoBehaviour
 
         fullscreenButtonText.text = fullscreen ? "On" : "Off";
         resolutionText.text = currentResolution.width + " x " + currentResolution.height;
+        musicSlider.value = GetMusicVolume();
     }
 
     public void ToggleOptions()
@@ -73,8 +87,47 @@ public class TitleManager : MonoBehaviour
         resolutionText.text = currentResolution.width + " x " + currentResolution.height;
     }
 
+    public void UpdateMusicVolume()
+    {
+        musicMixer.SetFloat("MasterVolume", musicSlider.value);
+    }
+
+    public void UpdateSFXVolume()
+    {
+        sfxMixer.SetFloat("MasterVolume", sfxSlider.value);
+    }
+
+    public void SetMusicVolume(float value)
+    {
+        musicMixer.SetFloat("MasterVolume", value);
+    }
+
+    public void SetSfxVolume(float value)
+    {
+        sfxMixer.SetFloat("MasterVolume", value);
+    }
+
+    public float GetMusicVolume()
+    {
+        float value;
+        musicMixer.GetFloat("MasterVolume", out value);
+        return value;
+    }
+
+    public float GetSfxVolume()
+    {
+        float value;
+        sfxMixer.GetFloat("MasterVolume", out value);
+        return value;
+    }
+
     public void Apply()
     {
         Screen.SetResolution(currentResolution.width, currentResolution.height, fullscreen);
+    }
+
+    public void NewGame()
+    {
+        PersistentManager.instance.LoadScene(PersistentManager.Scenes.Test, PersistentManager.Scenes.Title);
     }
 }

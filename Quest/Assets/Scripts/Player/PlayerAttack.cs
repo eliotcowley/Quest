@@ -17,9 +17,6 @@ public class PlayerAttack : MonoBehaviour
     public bool swordsmanInFront;
 
     [SerializeField]
-    private SFXMixer sfxMixer;
-
-    [SerializeField]
     private string enemyTag = "Enemy";
 
     [SerializeField]
@@ -55,6 +52,7 @@ public class PlayerAttack : MonoBehaviour
     private ParticleSystem invincibleParticles;
     private int beatCount;
     private bool canUseMagic = true;
+    private SFXMixer sfxMixer;
 
     private void Start()
     {
@@ -67,6 +65,7 @@ public class PlayerAttack : MonoBehaviour
         invincibleParticles = GetComponentInChildren<ParticleSystem>();
         beatCount = invincibleBeats;
         swordsmanInFront = true;
+        sfxMixer = SFXMixer.instance;
     }
 
     private void Update()

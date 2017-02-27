@@ -12,9 +12,6 @@ public class Pause : MonoBehaviour
     private GameObject pauseScreen;
 
     [SerializeField]
-    private AudioSource musicAudioSource;
-
-    [SerializeField]
     private Button resumeButton;
 
     [SerializeField]
@@ -22,11 +19,6 @@ public class Pause : MonoBehaviour
 
     public static bool paused = false;
     public RhythmTool rhythmTool;
-
-    private void Start()
-    {
-        
-    }
 
     private void Update()
     {
@@ -50,7 +42,6 @@ public class Pause : MonoBehaviour
         paused = false;
         rhythmTool.UnPause();
         Time.timeScale = 1f;
-        //musicAudioSource.UnPause();
         pauseButton.interactable = true;
     }
 
@@ -63,7 +54,6 @@ public class Pause : MonoBehaviour
             resumeButton.Select();
             rhythmTool.Pause();
             Time.timeScale = 0f;
-            //musicAudioSource.Pause();
             pauseButton.interactable = false;
         }
         

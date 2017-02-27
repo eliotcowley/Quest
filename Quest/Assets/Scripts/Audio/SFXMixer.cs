@@ -2,6 +2,7 @@
 
 public class SFXMixer : MonoBehaviour
 {
+    public static SFXMixer instance;
     public AudioClip[] clips;
     
     public enum Sounds
@@ -22,6 +23,15 @@ public class SFXMixer : MonoBehaviour
     private void Start()
     {
         audioSources = GetComponents<AudioSource>();
+
+        if (instance != null)
+        {
+            Debug.LogError("ERROR: More than one SFXMixer in scene");
+        }
+        else
+        {
+            instance = this;
+        }
     }
 
     public void PlaySound(Sounds sound, float delay = 0f)

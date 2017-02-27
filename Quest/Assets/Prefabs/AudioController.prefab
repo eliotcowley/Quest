@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 114966367268002360}
   m_Layer: 0
   m_Name: SFXController
-  m_TagString: Untagged
+  m_TagString: SFXMixer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83,7 +83,8 @@ AudioSource:
   m_GameObject: {fileID: 1888492667951330}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300001, guid: cb93f904f3beb95419adf303d10d82ea,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -163,7 +164,8 @@ AudioSource:
   m_GameObject: {fileID: 1888492667951330}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300001, guid: cb93f904f3beb95419adf303d10d82ea,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -243,7 +245,8 @@ AudioSource:
   m_GameObject: {fileID: 1365341620423622}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300001, guid: 5a904e299c06a634982be3cc239958d9,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: d6756320bed33a648a87e414a2990507, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1

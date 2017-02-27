@@ -20,12 +20,6 @@ public class SpawnObjects : MonoBehaviour
     private ObjectPool pool;
 
     [SerializeField]
-    private float beatLength;
-
-    [SerializeField]
-    private AudioSource music;
-
-    [SerializeField]
     private int startBeat = 88;
 
     private int nextPosition;
@@ -126,10 +120,4 @@ public class SpawnObjects : MonoBehaviour
         
         currentBeat = 0;
     }
-
-    //private void InitSpawn()
-    //{
-    //    Invoke("Spawn", nextTime);
-    //    music.Play();
-    //}
 }

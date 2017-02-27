@@ -15,9 +15,6 @@ public class Pickup : MonoBehaviour
     private Text coinText;
 
     [SerializeField]
-    private SFXMixer sfxMixer;
-
-    [SerializeField]
     private const string coinTag = "Coin";
 
     [SerializeField]
@@ -35,20 +32,22 @@ public class Pickup : MonoBehaviour
     [SerializeField]
     private const string orangeDiamondTag = "OrangeDiamond";
 
-    private AudioSource sfxAudio;
-    private int diamondsThisLevel = 0;
-
     [SerializeField]
     private PlayerHealth health;
 
+    private AudioSource sfxAudio;
+    private int diamondsThisLevel = 0;
+
     private PlayerAttack playerAttack;
+    private SFXMixer sfxMixer;
 
     // Use this for initialization
     void Start()
     {
         coinText.text = "0";
-        sfxAudio = sfxMixer.GetComponent<AudioSource>();
         playerAttack = GetComponent<PlayerAttack>();
+        sfxMixer = SFXMixer.instance;
+        sfxAudio = sfxMixer.GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
