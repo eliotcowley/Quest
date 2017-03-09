@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ObjectScrolling : MonoBehaviour
+public class Scrolling : MonoBehaviour
 {
     [SerializeField]
     private string magicTag = "Magic";
