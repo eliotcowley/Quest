@@ -3,9 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using EliotScripts.ObjectPool;
 
 public class TitleManager : MonoBehaviour
 {
+    public int ScrollSpeed = 140;
+
+    [HideInInspector]
+    public ObjectPool Pool;
+
     [SerializeField]
     private Button startButton;
 
@@ -33,6 +39,9 @@ public class TitleManager : MonoBehaviour
     [SerializeField]
     private AudioMixer sfxMixer;
 
+    [SerializeField]
+    private Button fullScreenButton;
+
     private bool fullscreen;
     private Resolution[] resolutions;
     private Resolution currentResolution;
@@ -58,12 +67,22 @@ public class TitleManager : MonoBehaviour
         fullscreenButtonText.text = fullscreen ? "On" : "Off";
         resolutionText.text = currentResolution.width + " x " + currentResolution.height;
         musicSlider.value = GetMusicVolume();
+        Pool = GetComponent<ObjectPool>();
     }
 
     public void ToggleOptions()
     {
         optionsMenu.SetActive(!optionsMenu.activeSelf);
         titleMenu.SetActive(!titleMenu.activeSelf);
+
+        if (optionsMenu.activeSelf)
+        {
+            fullScreenButton.Select();
+        }
+        else
+        {
+            startButton.Select();
+        }
     }
 
     public void ToggleFullscreen()
@@ -128,6 +147,6 @@ public class TitleManager : MonoBehaviour
 
     public void NewGame()
     {
-        PersistentManager.instance.LoadScene(PersistentManager.Scenes.Test, PersistentManager.Scenes.Title);
+        PersistentManager.Instance.LoadScene(PersistentManager.Scenes.Test, PersistentManager.Scenes.Title);
     }
 }

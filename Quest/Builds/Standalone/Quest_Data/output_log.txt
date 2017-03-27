@@ -2,18 +2,18 @@ Mono path[0] = 'C:/Users/Eliot/Documents/GitHub/Quest/Quest/Builds/Standalone/Qu
 Mono path[1] = 'C:/Users/Eliot/Documents/GitHub/Quest/Quest/Builds/Standalone/Quest_Data/Mono'
 Mono config path = 'C:/Users/Eliot/Documents/GitHub/Quest/Quest/Builds/Standalone/Quest_Data/Mono/etc'
 PlayerConnection initialized from C:/Users/Eliot/Documents/GitHub/Quest/Quest/Builds/Standalone/Quest_Data (debug = 0)
-PlayerConnection initialized network socket : 0.0.0.0 55501
-Multi-casting "[IP] 192.168.1.157 [Port] 55501 [Flags] 2 [Guid] 4078886336 [EditorId] 1313868797 [Version] 1048832 [Id] WindowsPlayer(EliotDesktop) [Debug] 0" to [225.0.0.222:54997]...
-Started listening to [0.0.0.0:55501]
-PlayerConnection already initialized - listening to [0.0.0.0:55501]
-Initialize engine version: 5.5.1f1 (88d00a7498cd)
+PlayerConnection initialized network socket : 0.0.0.0 55463
+Multi-casting "[IP] 192.168.1.157 [Port] 55463 [Flags] 2 [Guid] 1593554851 [EditorId] 11930320 [Version] 1048832 [Id] WindowsPlayer(EliotDesktop) [Debug] 0" to [225.0.0.222:54997]...
+Started listening to [0.0.0.0:55463]
+PlayerConnection already initialized - listening to [0.0.0.0:55463]
+Initialize engine version: 5.5.2f1 (3829d7f588f3)
 GfxDevice: creating device client; threaded=1
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
     Renderer: NVIDIA GeForce GTX 960 (ID=0x1401)
     Vendor:   NVIDIA
     VRAM:     2016 MB
-    Driver:   21.21.13.7866
+    Driver:   21.21.13.7892
 Begin MonoManager ReloadAssembly
 Platform assembly: C:\Users\Eliot\Documents\GitHub\Quest\Quest\Builds\Standalone\Quest_Data\Managed\UnityEngine.dll (this message is harmless)
 Loading C:\Users\Eliot\Documents\GitHub\Quest\Quest\Builds\Standalone\Quest_Data\Managed\UnityEngine.dll into Unity Child Domain
@@ -27,14 +27,37 @@ Platform assembly: C:\Users\Eliot\Documents\GitHub\Quest\Quest\Builds\Standalone
 Loading C:\Users\Eliot\Documents\GitHub\Quest\Quest\Builds\Standalone\Quest_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\Eliot\Documents\GitHub\Quest\Quest\Builds\Standalone\Quest_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
 Loading C:\Users\Eliot\Documents\GitHub\Quest\Quest\Builds\Standalone\Quest_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
-- Completed reload, in  0.024 seconds
+- Completed reload, in  0.019 seconds
 Platform assembly: C:\Users\Eliot\Documents\GitHub\Quest\Quest\Builds\Standalone\Quest_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\Eliot\Documents\GitHub\Quest\Quest\Builds\Standalone\Quest_Data\Managed\System.dll (this message is harmless)
-desktop: 1920x1080 144Hz; virtual: 3840x1080 at -1920,0
+desktop: 1920x1080 60Hz; virtual: 3840x1080 at -1920,0
 <RI> Initializing input.
 <RI> Input initialized.
+desktop: 1920x1080 144Hz; virtual: 3840x1080 at -1920,0
 <RI> Initialized touch support.
-UnloadTime: 1.293826 ms
+UnloadTime: 0.810495 ms
+Joysticks connected: True
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+GameManager:Start() (at C:\Users\Eliot\Documents\GitHub\Quest\Quest\Assets\Scripts\Game\GameManager.cs:40)
+ 
+(Filename: C:/Users/Eliot/Documents/GitHub/Quest/Quest/Assets/Scripts/Game/GameManager.cs Line: 40)
+
+Song loaded
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+BeatManager:OnReadyToPlay() (at C:\Users\Eliot\Documents\GitHub\Quest\Quest\Assets\Scripts\Audio\BeatManager.cs:22)
+UnityEngine.GameObject:SendMessage(String, Object, SendMessageOptions)
+UnityEngine.GameObject:SendMessage(String, SendMessageOptions) (at C:\buildslave\unity\build\artifacts\generated\common\runtime\GameObjectBindings.gen.cs:320)
+<AsyncAnalyze>c__Iterator1:MoveNext() (at C:\Users\Eliot\Documents\GitHub\Quest\Quest\Assets\RhythmTool\Scripts\RhythmTool.cs:511)
+UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
+ 
+(Filename: C:/Users/Eliot/Documents/GitHub/Quest/Quest/Assets/Scripts/Audio/BeatManager.cs Line: 22)
+
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 5b70 -> priority: 1 
-  Thread -> id: fb0 -> priority: 1 
+  Thread -> id: 6948 -> priority: 1 
+  Thread -> id: 6ab4 -> priority: 1 
