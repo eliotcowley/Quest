@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 198274415955418378}
   - component: {fileID: 199898438387276150}
   - component: {fileID: 114753368450274318}
-  - component: {fileID: 61374714437085998}
   m_Layer: 0
   m_Name: GhostDieParticles
   m_TagString: Particles
@@ -43,20 +42,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61374714437085998
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1946549632522700}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
 --- !u!114 &114753368450274318
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -68,6 +53,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85926bf2da538e34a9d19fbd59549093, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  magicTag: Magic
+  barrierTag: Barrier
 --- !u!198 &198274415955418378
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -76,7 +63,7 @@ ParticleSystem:
   m_GameObject: {fileID: 1946549632522700}
   serializedVersion: 5
   lengthInSec: 1
-  speed: 1
+  simulationSpeed: 1
   looping: 0
   prewarm: 0
   playOnAwake: 1
@@ -123,7 +110,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1987284024
+  randomSeed: 1311105569
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -2332,9 +2319,9 @@ ParticleSystem:
     collisionShape3: {fileID: 0}
     collisionShape4: {fileID: 0}
     collisionShape5: {fileID: 0}
-    inside: 1
+    inside: 0
     outside: 0
-    enter: 0
+    enter: 2
     exit: 0
     radiusScale: 1
   SubModule:

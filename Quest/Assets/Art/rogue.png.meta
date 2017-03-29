@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 74c822a171c6d614caf19795254d24bc
-timeCreated: 1465103717
+timeCreated: 1490748755
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -104,12 +104,12 @@ TextureImporter:
     21300194: rogue_97
     21300196: rogue_98
     21300198: rogue_99
-  serializedVersion: 2
+  serializedVersion: 4
   mipmaps:
     mipMapMode: 0
     enableMipMap: 1
+    sRGBTexture: 1
     linearTexture: 0
-    correctGamma: 0
     fadeOut: 0
     borderMipMap: 0
     mipMapFadeDistanceStart: 1
@@ -121,10 +121,8 @@ TextureImporter:
     normalMapFilter: 0
   isReadable: 0
   grayScaleToAlpha: 0
-  generateCubemap: 0
+  generateCubemap: 6
   cubemapConvolution: 0
-  cubemapConvolutionSteps: 7
-  cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -3
   maxTextureSize: 2048
@@ -135,9 +133,7 @@ TextureImporter:
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
-  rGBM: 0
   compressionQuality: 50
-  allowsAlphaSplitting: 0
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
@@ -145,1880 +141,1228 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 1
+  alphaUsage: 1
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
-  buildTargetSettings: []
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: rogue_0
+    - serializedVersion: 2
+      name: rogue_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 288
+        y: 287
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -4, y: 16}
-        - {x: -9, y: 14}
-        - {x: -9, y: -16}
-        - {x: 8, y: -16}
-        - {x: 9, y: -13}
-        - {x: 9, y: 10}
-        - {x: 5, y: 16}
-    - name: rogue_1
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_1
       rect:
         serializedVersion: 2
         x: 32
-        y: 288
+        y: 287
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -4, y: 16}
-        - {x: -9, y: 14}
-        - {x: -9, y: -16}
-        - {x: 8, y: -16}
-        - {x: 9, y: -13}
-        - {x: 9, y: 10}
-        - {x: 5, y: 16}
-    - name: rogue_2
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_2
       rect:
         serializedVersion: 2
         x: 64
-        y: 288
+        y: 287
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -5, y: 16}
-        - {x: -9, y: 7}
-        - {x: -9, y: -11}
-        - {x: -8, y: -16}
-        - {x: 7, y: -16}
-        - {x: 9, y: -10}
-        - {x: 9, y: 4}
-        - {x: 8, y: 16}
-    - name: rogue_3
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_3
       rect:
         serializedVersion: 2
         x: 96
-        y: 288
+        y: 287
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -5, y: 16}
-        - {x: -9, y: 7}
-        - {x: -9, y: -11}
-        - {x: -8, y: -16}
-        - {x: 7, y: -16}
-        - {x: 9, y: -10}
-        - {x: 9, y: 4}
-        - {x: 8, y: 16}
-    - name: rogue_4
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_4
       rect:
         serializedVersion: 2
         x: 128
-        y: 288
+        y: 287
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -5, y: 16}
-        - {x: -9, y: 7}
-        - {x: -9, y: -11}
-        - {x: -8, y: -16}
-        - {x: 7, y: -16}
-        - {x: 9, y: -10}
-        - {x: 9, y: 4}
-        - {x: 8, y: 16}
-    - name: rogue_5
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_5
       rect:
         serializedVersion: 2
         x: 160
-        y: 288
+        y: 287
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -5, y: 16}
-        - {x: -9, y: 7}
-        - {x: -9, y: -11}
-        - {x: -8, y: -16}
-        - {x: 7, y: -16}
-        - {x: 9, y: -10}
-        - {x: 9, y: 4}
-        - {x: 8, y: 16}
-    - name: rogue_6
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_6
       rect:
         serializedVersion: 2
         x: 192
-        y: 288
+        y: 287
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -6, y: 16}
-        - {x: -9, y: 8}
-        - {x: -9, y: -15}
-        - {x: -8, y: -16}
-        - {x: 8, y: -16}
-        - {x: 9, y: -12}
-        - {x: 9, y: 11}
-        - {x: 8, y: 16}
-    - name: rogue_7
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_7
       rect:
         serializedVersion: 2
         x: 224
-        y: 288
+        y: 287
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 8, y: 14}
-        - {x: 4, y: 16}
-        - {x: -6, y: 16}
-        - {x: -9, y: 10}
-        - {x: -9, y: -10}
-        - {x: -7, y: -16}
-        - {x: 7, y: -16}
-        - {x: 9, y: -12}
-        - {x: 9, y: 4}
-    - name: rogue_8
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_8
       rect:
         serializedVersion: 2
         x: 256
-        y: 288
+        y: 287
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 8, y: 14}
-        - {x: 4, y: 16}
-        - {x: -6, y: 16}
-        - {x: -9, y: 10}
-        - {x: -9, y: -10}
-        - {x: -7, y: -16}
-        - {x: 7, y: -16}
-        - {x: 9, y: -12}
-        - {x: 9, y: 4}
-    - name: rogue_9
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_9
       rect:
         serializedVersion: 2
         x: 288
-        y: 288
+        y: 287
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -4, y: 16}
-        - {x: -9, y: 14}
-        - {x: -9, y: -16}
-        - {x: 8, y: -16}
-        - {x: 9, y: -13}
-        - {x: 9, y: 10}
-        - {x: 5, y: 16}
-    - name: rogue_10
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_10
       rect:
         serializedVersion: 2
         x: 0
-        y: 256
+        y: 255
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -4, y: 16}
-        - {x: -9, y: 14}
-        - {x: -9, y: -16}
-        - {x: 8, y: -16}
-        - {x: 9, y: -13}
-        - {x: 9, y: 10}
-        - {x: 5, y: 16}
-    - name: rogue_11
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_11
       rect:
         serializedVersion: 2
         x: 32
-        y: 256
+        y: 255
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -5, y: 16}
-        - {x: -9, y: 10}
-        - {x: -9, y: -13}
-        - {x: -8, y: -16}
-        - {x: 8, y: -16}
-        - {x: 9, y: -14}
-        - {x: 9, y: 11}
-        - {x: 7, y: 16}
-    - name: rogue_12
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_12
       rect:
         serializedVersion: 2
         x: 64
-        y: 256
+        y: 255
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -9, y: 16}
-        - {x: -9, y: -13}
-        - {x: -8, y: -16}
-        - {x: 8, y: -16}
-        - {x: 9, y: -15}
-        - {x: 9, y: 16}
-    - name: rogue_13
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_13
       rect:
         serializedVersion: 2
         x: 96
-        y: 256
+        y: 255
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 6, y: 16}
-        - {x: -7, y: 16}
-        - {x: -9, y: 13}
-        - {x: -9, y: -14}
-        - {x: -8, y: -16}
-        - {x: 7, y: -16}
-        - {x: 10, y: -13}
-        - {x: 10, y: 5}
-        - {x: 9, y: 15}
-    - name: rogue_14
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_14
       rect:
         serializedVersion: 2
         x: 128
-        y: 256
+        y: 255
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 6, y: 16}
-        - {x: -9, y: 16}
-        - {x: -9, y: -16}
-        - {x: 7, y: -16}
-        - {x: 11, y: -13}
-        - {x: 11, y: 4}
-        - {x: 8, y: 15}
-    - name: rogue_15
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_15
       rect:
         serializedVersion: 2
         x: 160
-        y: 256
+        y: 255
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -7, y: 16}
-        - {x: -9, y: 13}
-        - {x: -9, y: -14}
-        - {x: -8, y: -16}
-        - {x: 8, y: -16}
-        - {x: 12, y: -13}
-        - {x: 12, y: 3}
-        - {x: 8, y: 16}
-    - name: rogue_16
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_16
       rect:
         serializedVersion: 2
         x: 192
-        y: 256
+        y: 255
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -5, y: 16}
-        - {x: -9, y: 10}
-        - {x: -9, y: -13}
-        - {x: -8, y: -16}
-        - {x: 9, y: -16}
-        - {x: 16, y: -1}
-        - {x: 16, y: 8}
-        - {x: 4, y: 16}
-    - name: rogue_17
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_17
       rect:
         serializedVersion: 2
         x: 224
-        y: 256
+        y: 255
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 4, y: 16}
-        - {x: -6, y: 16}
-        - {x: -9, y: 11}
-        - {x: -9, y: -13}
-        - {x: -8, y: -16}
-        - {x: 8, y: -16}
-        - {x: 12, y: -3}
-        - {x: 12, y: 3}
-        - {x: 7, y: 14}
-      - - {x: 12, y: 7}
-        - {x: 12, y: 5}
-        - {x: 14, y: 3}
-        - {x: 16, y: 4}
-        - {x: 16, y: 10}
-        - {x: 15, y: 10}
-    - name: rogue_18
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_18
       rect:
         serializedVersion: 2
         x: 256
-        y: 256
+        y: 255
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -6, y: 16}
-        - {x: -9, y: 10}
-        - {x: -9, y: -16}
-        - {x: 10, y: -16}
-        - {x: 10, y: 12}
-        - {x: 9, y: 16}
-    - name: rogue_19
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_19
       rect:
         serializedVersion: 2
         x: 288
-        y: 256
+        y: 255
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -6, y: 16}
-        - {x: -9, y: 9}
-        - {x: -9, y: -16}
-        - {x: 8, y: -16}
-        - {x: 9, y: -15}
-        - {x: 9, y: 15}
-        - {x: 7, y: 16}
-    - name: rogue_20
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_20
       rect:
         serializedVersion: 2
         x: 0
-        y: 224
+        y: 223
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -11, y: 16}
-        - {x: -11, y: -16}
-        - {x: 8, y: -16}
-        - {x: 8, y: 15}
-        - {x: 5, y: 16}
-    - name: rogue_21
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_21
       rect:
         serializedVersion: 2
         x: 32
-        y: 224
+        y: 223
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 4, y: 16}
-        - {x: -8, y: 16}
-        - {x: -12, y: 12}
-        - {x: -12, y: -16}
-        - {x: 7, y: -16}
-        - {x: 8, y: -14}
-        - {x: 8, y: 8}
-        - {x: 7, y: 14}
-    - name: rogue_22
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_22
       rect:
         serializedVersion: 2
         x: 64
-        y: 224
+        y: 223
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -7, y: 16}
-        - {x: -11, y: 12}
-        - {x: -11, y: -16}
-        - {x: 6, y: -16}
-        - {x: 8, y: -12}
-        - {x: 8, y: 16}
-    - name: rogue_23
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_23
       rect:
         serializedVersion: 2
         x: 96
-        y: 224
+        y: 223
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -4, y: 16}
-        - {x: -10, y: 12}
-        - {x: -12, y: -6}
-        - {x: -12, y: -12}
-        - {x: -7, y: -16}
-        - {x: 8, y: -16}
-        - {x: 8, y: 11}
-        - {x: 6, y: 16}
-    - name: rogue_24
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_24
       rect:
         serializedVersion: 2
         x: 128
-        y: 224
+        y: 223
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 9, y: -12}
-        - {x: 9, y: 3}
-        - {x: 8, y: 14}
-        - {x: 3, y: 16}
-        - {x: -5, y: 16}
-        - {x: -9, y: 12}
-        - {x: -13, y: -6}
-        - {x: -13, y: -11}
-        - {x: -7, y: -16}
-        - {x: 7, y: -16}
-    - name: rogue_25
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_25
       rect:
         serializedVersion: 2
         x: 160
-        y: 224
+        y: 223
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 6, y: 16}
-        - {x: -8, y: 16}
-        - {x: -13, y: 6}
-        - {x: -13, y: -14}
-        - {x: -10, y: -16}
-        - {x: 7, y: -16}
-        - {x: 9, y: -11}
-        - {x: 9, y: 4}
-        - {x: 8, y: 15}
-    - name: rogue_26
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_26
       rect:
         serializedVersion: 2
         x: 192
-        y: 224
+        y: 223
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -6, y: 16}
-        - {x: -13, y: 14}
-        - {x: -13, y: -16}
-        - {x: 8, y: -16}
-        - {x: 8, y: 15}
-        - {x: 6, y: 16}
-    - name: rogue_27
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_27
       rect:
         serializedVersion: 2
         x: 224
-        y: 224
+        y: 223
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -7, y: 16}
-        - {x: -10, y: 4}
-        - {x: -10, y: -16}
-        - {x: 7, y: -16}
-        - {x: 8, y: -13}
-        - {x: 8, y: 16}
-    - name: rogue_28
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_28
       rect:
         serializedVersion: 2
         x: 256
-        y: 224
+        y: 223
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 4, y: 16}
-        - {x: -7, y: 16}
-        - {x: -10, y: 9}
-        - {x: -10, y: -11}
-        - {x: -6, y: -16}
-        - {x: 8, y: -16}
-        - {x: 8, y: 10}
-    - name: rogue_29
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_29
       rect:
         serializedVersion: 2
         x: 288
-        y: 224
+        y: 223
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 9, y: -12}
-        - {x: 9, y: 3}
-        - {x: 8, y: 14}
-        - {x: 3, y: 16}
-        - {x: -5, y: 16}
-        - {x: -9, y: 12}
-        - {x: -10, y: -2}
-        - {x: -10, y: -12}
-        - {x: -7, y: -16}
-        - {x: 7, y: -16}
-    - name: rogue_30
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_30
       rect:
         serializedVersion: 2
         x: 0
-        y: 192
+        y: 191
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -4, y: 16}
-        - {x: -9, y: 13}
-        - {x: -9, y: -14}
-        - {x: -8, y: -16}
-        - {x: 9, y: -16}
-        - {x: 9, y: 10}
-        - {x: 6, y: 16}
-    - name: rogue_31
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_31
       rect:
         serializedVersion: 2
         x: 32
-        y: 192
+        y: 191
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 7, y: 16}
-        - {x: -4, y: 16}
-        - {x: -9, y: 13}
-        - {x: -9, y: -13}
-        - {x: -6, y: -16}
-        - {x: 9, y: -16}
-        - {x: 9, y: 8}
-        - {x: 8, y: 14}
-    - name: rogue_32
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_32
       rect:
         serializedVersion: 2
         x: 64
-        y: 192
+        y: 191
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -5, y: 16}
-        - {x: -10, y: 8}
-        - {x: -10, y: -11}
-        - {x: -7, y: -16}
-        - {x: 9, y: -16}
-        - {x: 9, y: 10}
-        - {x: 6, y: 16}
-    - name: rogue_33
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_33
       rect:
         serializedVersion: 2
         x: 96
-        y: 192
+        y: 191
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -6, y: 16}
-        - {x: -8, y: 15}
-        - {x: -8, y: -16}
-        - {x: 9, y: -16}
-        - {x: 9, y: 16}
-    - name: rogue_34
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_34
       rect:
         serializedVersion: 2
         x: 128
-        y: 192
+        y: 191
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -4, y: 16}
-        - {x: -7, y: 12}
-        - {x: -7, y: -16}
-        - {x: 12, y: -16}
-        - {x: 12, y: 16}
-    - name: rogue_35
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_35
       rect:
         serializedVersion: 2
         x: 160
-        y: 192
+        y: 191
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -7, y: 16}
-        - {x: -7, y: -16}
-        - {x: 12, y: -16}
-        - {x: 16, y: -6}
-        - {x: 16, y: 8}
-        - {x: 9, y: 16}
-    - name: rogue_36
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_36
       rect:
         serializedVersion: 2
         x: 192
-        y: 192
+        y: 191
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 6, y: 16}
-        - {x: -4, y: 16}
-        - {x: -5, y: 14}
-        - {x: -8, y: 6}
-        - {x: -8, y: -11}
-        - {x: -7, y: -16}
-        - {x: 8, y: -16}
-        - {x: 10, y: -12}
-        - {x: 10, y: 3}
-        - {x: 9, y: 15}
-    - name: rogue_37
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_37
       rect:
         serializedVersion: 2
         x: 224
-        y: 192
+        y: 191
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 8, y: 16}
-        - {x: -5, y: 16}
-        - {x: -8, y: 9}
-        - {x: -8, y: -16}
-        - {x: 9, y: -16}
-        - {x: 10, y: -15}
-        - {x: 10, y: 15}
-    - name: rogue_38
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_38
       rect:
         serializedVersion: 2
         x: 256
-        y: 192
+        y: 191
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 5, y: 16}
-        - {x: -5, y: 16}
-        - {x: -9, y: 10}
-        - {x: -9, y: -13}
-        - {x: -8, y: -16}
-        - {x: 8, y: -16}
-        - {x: 10, y: -12}
-        - {x: 10, y: 4}
-        - {x: 9, y: 14}
-    - name: rogue_39
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_39
       rect:
         serializedVersion: 2
         x: 288
-        y: 192
+        y: 191
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -6, y: 16}
-        - {x: -9, y: 11}
-        - {x: -9, y: -13}
-        - {x: -8, y: -16}
-        - {x: 9, y: -16}
-        - {x: 9, y: 9}
-        - {x: 4, y: 16}
-    - name: rogue_40
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_40
       rect:
         serializedVersion: 2
         x: 0
-        y: 160
+        y: 159
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -4, y: 16}
-        - {x: -9, y: 14}
-        - {x: -9, y: -16}
-        - {x: 8, y: -16}
-        - {x: 9, y: -13}
-        - {x: 9, y: 10}
-        - {x: 5, y: 16}
-    - name: rogue_41
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_41
       rect:
         serializedVersion: 2
         x: 32
-        y: 160
+        y: 159
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -6, y: 16}
-        - {x: -9, y: 10}
-        - {x: -9, y: -16}
-        - {x: 9, y: -16}
-        - {x: 9, y: 16}
-    - name: rogue_42
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_42
       rect:
         serializedVersion: 2
         x: 64
-        y: 160
+        y: 159
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -6, y: 16}
-        - {x: -8, y: 12}
-        - {x: -8, y: -16}
-        - {x: 9, y: -16}
-        - {x: 9, y: 10}
-        - {x: 5, y: 16}
-    - name: rogue_43
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_43
       rect:
         serializedVersion: 2
         x: 96
-        y: 160
+        y: 159
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -4, y: 16}
-        - {x: -8, y: 13}
-        - {x: -8, y: -16}
-        - {x: 10, y: -16}
-        - {x: 10, y: 15}
-        - {x: 1, y: 16}
-    - name: rogue_44
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_44
       rect:
         serializedVersion: 2
         x: 128
-        y: 160
+        y: 159
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -6, y: 15}
-        - {x: -8, y: 10}
-        - {x: -8, y: -15}
-        - {x: -7, y: -16}
-        - {x: 10, y: -16}
-        - {x: 10, y: 3}
-        - {x: 9, y: 15}
-    - name: rogue_45
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_45
       rect:
         serializedVersion: 2
         x: 160
-        y: 160
+        y: 159
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 0, y: 12}
-        - {x: -5, y: 10}
-        - {x: -6, y: 2}
-        - {x: -6, y: -14}
-        - {x: -5, y: -16}
-        - {x: 10, y: -16}
-        - {x: 10, y: 10}
-        - {x: 7, y: 12}
-    - name: rogue_46
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_46
       rect:
         serializedVersion: 2
         x: 192
-        y: 160
+        y: 159
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -4, y: 9}
-        - {x: -6, y: 8}
-        - {x: -6, y: -16}
-        - {x: 10, y: -16}
-        - {x: 10, y: 8}
-        - {x: 6, y: 9}
-    - name: rogue_47
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_47
       rect:
         serializedVersion: 2
         x: 224
-        y: 160
+        y: 159
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -5, y: 3}
-        - {x: -8, y: -11}
-        - {x: -8, y: -16}
-        - {x: 11, y: -16}
-        - {x: 11, y: -11}
-        - {x: 10, y: 2}
-        - {x: 5, y: 5}
-        - {x: 0, y: 5}
-    - name: rogue_48
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_48
       rect:
         serializedVersion: 2
         x: 256
-        y: 160
+        y: 159
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -11, y: -14}
-        - {x: -11, y: -16}
-        - {x: 13, y: -16}
-        - {x: 13, y: -11}
-        - {x: 12, y: -2}
-        - {x: 9, y: 1}
-        - {x: -5, y: 1}
-    - name: rogue_49
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_49
       rect:
         serializedVersion: 2
         x: 288
-        y: 160
+        y: 159
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -12, y: -15}
-        - {x: -12, y: -16}
-        - {x: 14, y: -16}
-        - {x: 14, y: -15}
-        - {x: 10, y: -7}
-        - {x: 0, y: -7}
-        - {x: -8, y: -10}
-    - name: rogue_50
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_50
       rect:
         serializedVersion: 2
         x: 0
-        y: 128
+        y: 127
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -5, y: 16}
-        - {x: -8, y: 9}
-        - {x: -8, y: -12}
-        - {x: -7, y: -16}
-        - {x: 9, y: -16}
-        - {x: 9, y: 16}
-    - name: rogue_51
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_51
       rect:
         serializedVersion: 2
         x: 32
-        y: 128
+        y: 127
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -5, y: 16}
-        - {x: -8, y: 9}
-        - {x: -8, y: -12}
-        - {x: -7, y: -16}
-        - {x: 9, y: -16}
-        - {x: 9, y: 16}
-    - name: rogue_52
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_52
       rect:
         serializedVersion: 2
         x: 64
-        y: 128
+        y: 127
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 5, y: 16}
-        - {x: -5, y: 16}
-        - {x: -8, y: 9}
-        - {x: -8, y: -9}
-        - {x: -7, y: -16}
-        - {x: 7, y: -16}
-        - {x: 9, y: -11}
-        - {x: 9, y: 2}
-        - {x: 8, y: 15}
-    - name: rogue_53
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_53
       rect:
         serializedVersion: 2
         x: 96
-        y: 128
+        y: 127
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 5, y: 16}
-        - {x: -5, y: 16}
-        - {x: -8, y: 9}
-        - {x: -8, y: -9}
-        - {x: -7, y: -16}
-        - {x: 7, y: -16}
-        - {x: 9, y: -11}
-        - {x: 9, y: 2}
-        - {x: 8, y: 15}
-    - name: rogue_54
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_54
       rect:
         serializedVersion: 2
         x: 128
-        y: 128
+        y: 127
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 5, y: 16}
-        - {x: -5, y: 16}
-        - {x: -8, y: 9}
-        - {x: -8, y: -9}
-        - {x: -7, y: -16}
-        - {x: 7, y: -16}
-        - {x: 9, y: -11}
-        - {x: 9, y: 2}
-        - {x: 8, y: 15}
-    - name: rogue_55
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_55
       rect:
         serializedVersion: 2
         x: 160
-        y: 128
+        y: 127
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 5, y: 16}
-        - {x: -5, y: 16}
-        - {x: -8, y: 9}
-        - {x: -8, y: -9}
-        - {x: -7, y: -16}
-        - {x: 7, y: -16}
-        - {x: 9, y: -11}
-        - {x: 9, y: 2}
-        - {x: 8, y: 15}
-    - name: rogue_56
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_56
       rect:
         serializedVersion: 2
         x: 192
-        y: 128
+        y: 127
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 8, y: 15}
-        - {x: 5, y: 16}
-        - {x: -5, y: 16}
-        - {x: -8, y: 7}
-        - {x: -8, y: -15}
-        - {x: -7, y: -16}
-        - {x: 7, y: -16}
-        - {x: 9, y: -12}
-        - {x: 9, y: 1}
-    - name: rogue_57
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_57
       rect:
         serializedVersion: 2
         x: 224
-        y: 128
+        y: 127
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 8, y: 15}
-        - {x: 5, y: 16}
-        - {x: -5, y: 16}
-        - {x: -8, y: 7}
-        - {x: -8, y: -15}
-        - {x: -7, y: -16}
-        - {x: 7, y: -16}
-        - {x: 9, y: -12}
-        - {x: 9, y: 1}
-    - name: rogue_58
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_58
       rect:
         serializedVersion: 2
         x: 256
-        y: 128
+        y: 127
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 2, y: 16}
-        - {x: -5, y: 16}
-        - {x: -8, y: 12}
-        - {x: -8, y: -16}
-        - {x: 7, y: -16}
-        - {x: 9, y: -14}
-        - {x: 9, y: 8}
-        - {x: 8, y: 14}
-    - name: rogue_59
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_59
       rect:
         serializedVersion: 2
         x: 288
-        y: 128
+        y: 127
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -5, y: 16}
-        - {x: -8, y: 9}
-        - {x: -8, y: -12}
-        - {x: -7, y: -16}
-        - {x: 9, y: -16}
-        - {x: 9, y: 16}
-    - name: rogue_60
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_60
       rect:
         serializedVersion: 2
         x: 0
-        y: 96
+        y: 95
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -5, y: 16}
-        - {x: -8, y: 9}
-        - {x: -8, y: -12}
-        - {x: -7, y: -16}
-        - {x: 9, y: -16}
-        - {x: 9, y: 16}
-    - name: rogue_61
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_61
       rect:
         serializedVersion: 2
         x: 32
-        y: 96
+        y: 95
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -7, y: 16}
-        - {x: -8, y: 12}
-        - {x: -8, y: -16}
-        - {x: 9, y: -16}
-        - {x: 9, y: 16}
-    - name: rogue_62
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_62
       rect:
         serializedVersion: 2
         x: 64
-        y: 96
+        y: 95
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -8, y: 16}
-        - {x: -8, y: -16}
-        - {x: 9, y: -16}
-        - {x: 9, y: 16}
-    - name: rogue_63
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_63
       rect:
         serializedVersion: 2
         x: 96
-        y: 96
+        y: 95
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 8, y: 14}
-        - {x: 3, y: 16}
-        - {x: -5, y: 16}
-        - {x: -8, y: 13}
-        - {x: -8, y: -10}
-        - {x: -7, y: -16}
-        - {x: 7, y: -16}
-        - {x: 10, y: -4}
-        - {x: 10, y: 2}
-    - name: rogue_64
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_64
       rect:
         serializedVersion: 2
         x: 128
-        y: 96
+        y: 95
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -2, y: 16}
-        - {x: -8, y: 14}
-        - {x: -8, y: -10}
-        - {x: -6, y: -16}
-        - {x: 10, y: -16}
-        - {x: 10, y: 16}
-    - name: rogue_65
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_65
       rect:
         serializedVersion: 2
         x: 160
-        y: 96
+        y: 95
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 8, y: 16}
-        - {x: -5, y: 16}
-        - {x: -8, y: 13}
-        - {x: -8, y: -10}
-        - {x: -6, y: -16}
-        - {x: 8, y: -16}
-        - {x: 12, y: -13}
-        - {x: 12, y: 8}
-        - {x: 10, y: 15}
-    - name: rogue_66
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_66
       rect:
         serializedVersion: 2
         x: 192
-        y: 96
+        y: 95
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 16, y: 2}
-        - {x: 16, y: 8}
-        - {x: 5, y: 16}
-        - {x: -4, y: 16}
-        - {x: -8, y: 9}
-        - {x: -8, y: -10}
-        - {x: -6, y: -16}
-        - {x: 7, y: -16}
-    - name: rogue_67
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_67
       rect:
         serializedVersion: 2
         x: 224
-        y: 96
+        y: 95
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 3, y: 16}
-        - {x: -6, y: 16}
-        - {x: -8, y: 12}
-        - {x: -8, y: -10}
-        - {x: -7, y: -16}
-        - {x: 8, y: -16}
-        - {x: 12, y: -1}
-        - {x: 12, y: 2}
-        - {x: 7, y: 14}
-      - - {x: 12, y: 7}
-        - {x: 12, y: 5}
-        - {x: 14, y: 3}
-        - {x: 16, y: 4}
-        - {x: 16, y: 10}
-        - {x: 15, y: 10}
-    - name: rogue_68
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_68
       rect:
         serializedVersion: 2
         x: 256
-        y: 96
+        y: 95
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 3, y: 16}
-        - {x: -5, y: 16}
-        - {x: -8, y: 9}
-        - {x: -8, y: -12}
-        - {x: -7, y: -16}
-        - {x: 9, y: -16}
-        - {x: 10, y: -11}
-        - {x: 10, y: 8}
-        - {x: 8, y: 14}
-    - name: rogue_69
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_69
       rect:
         serializedVersion: 2
         x: 288
-        y: 96
+        y: 95
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 3, y: 16}
-        - {x: -5, y: 16}
-        - {x: -8, y: 9}
-        - {x: -8, y: -12}
-        - {x: -7, y: -16}
-        - {x: 7, y: -16}
-        - {x: 9, y: -9}
-        - {x: 9, y: 2}
-        - {x: 8, y: 14}
-    - name: rogue_70
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_70
       rect:
         serializedVersion: 2
         x: 0
-        y: 64
+        y: 63
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 8, y: -10}
-        - {x: 8, y: 14}
-        - {x: 4, y: 16}
-        - {x: -6, y: 16}
-        - {x: -10, y: 1}
-        - {x: -10, y: -15}
-        - {x: -8, y: -16}
-        - {x: 7, y: -16}
-    - name: rogue_71
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_71
       rect:
         serializedVersion: 2
         x: 32
-        y: 64
+        y: 63
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -4, y: 16}
-        - {x: -6, y: 13}
-        - {x: -11, y: -1}
-        - {x: -11, y: -14}
-        - {x: -8, y: -16}
-        - {x: 8, y: -16}
-        - {x: 8, y: 14}
-        - {x: 3, y: 16}
-    - name: rogue_72
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_72
       rect:
         serializedVersion: 2
         x: 64
-        y: 64
+        y: 63
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -6, y: 16}
-        - {x: -10, y: 2}
-        - {x: -10, y: -15}
-        - {x: -8, y: -16}
-        - {x: 6, y: -16}
-        - {x: 8, y: -12}
-        - {x: 8, y: 15}
-        - {x: 6, y: 16}
-    - name: rogue_73
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_73
       rect:
         serializedVersion: 2
         x: 96
-        y: 64
+        y: 63
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -5, y: 16}
-        - {x: -7, y: 13}
-        - {x: -11, y: -2}
-        - {x: -11, y: -13}
-        - {x: -7, y: -16}
-        - {x: 8, y: -16}
-        - {x: 8, y: 14}
-        - {x: 3, y: 16}
-    - name: rogue_74
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_74
       rect:
         serializedVersion: 2
         x: 128
-        y: 64
+        y: 63
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 4, y: 15}
-        - {x: -5, y: 15}
-        - {x: -12, y: -2}
-        - {x: -12, y: -12}
-        - {x: -7, y: -16}
-        - {x: 8, y: -16}
-        - {x: 9, y: -15}
-        - {x: 9, y: 13}
-    - name: rogue_75
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_75
       rect:
         serializedVersion: 2
         x: 160
-        y: 64
+        y: 63
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 9, y: -10}
-        - {x: 9, y: 3}
-        - {x: 8, y: 14}
-        - {x: 3, y: 16}
-        - {x: -4, y: 16}
-        - {x: -6, y: 12}
-        - {x: -12, y: -6}
-        - {x: -12, y: -11}
-        - {x: -7, y: -16}
-        - {x: -2, y: -16}
-        - {x: -1, y: -15}
-        - {x: 0, y: -16}
-        - {x: 7, y: -16}
-    - name: rogue_76
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_76
       rect:
         serializedVersion: 2
         x: 192
-        y: 64
+        y: 63
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -5, y: 16}
-        - {x: -8, y: 9}
-        - {x: -11, y: -6}
-        - {x: -11, y: -10}
-        - {x: -7, y: -16}
-        - {x: 8, y: -16}
-        - {x: 8, y: 14}
-        - {x: 3, y: 16}
-    - name: rogue_77
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_77
       rect:
         serializedVersion: 2
         x: 224
-        y: 64
+        y: 63
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 5, y: 16}
-        - {x: -6, y: 16}
-        - {x: -7, y: 14}
-        - {x: -9, y: 1}
-        - {x: -9, y: -13}
-        - {x: -7, y: -16}
-        - {x: 5, y: -16}
-        - {x: 6, y: -15}
-        - {x: 8, y: -9}
-        - {x: 8, y: 15}
-    - name: rogue_78
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_78
       rect:
         serializedVersion: 2
         x: 256
-        y: 64
+        y: 63
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 3, y: 16}
-        - {x: -5, y: 16}
-        - {x: -9, y: 4}
-        - {x: -9, y: -13}
-        - {x: -7, y: -16}
-        - {x: 6, y: -16}
-        - {x: 8, y: -9}
-        - {x: 8, y: 14}
-    - name: rogue_79
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_79
       rect:
         serializedVersion: 2
         x: 288
-        y: 64
+        y: 63
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 9, y: -10}
-        - {x: 9, y: 6}
-        - {x: 4, y: 15}
-        - {x: -8, y: 15}
-        - {x: -9, y: 14}
-        - {x: -9, y: -16}
-        - {x: 7, y: -16}
-    - name: rogue_80
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_80
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
+        y: 31
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 3, y: 16}
-        - {x: -6, y: 16}
-        - {x: -8, y: 14}
-        - {x: -8, y: -15}
-        - {x: -6, y: -16}
-        - {x: 8, y: -16}
-        - {x: 9, y: -9}
-        - {x: 9, y: 9}
-        - {x: 8, y: 14}
-    - name: rogue_81
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_81
       rect:
         serializedVersion: 2
         x: 32
-        y: 32
+        y: 31
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -7, y: 16}
-        - {x: -8, y: 15}
-        - {x: -8, y: -13}
-        - {x: -5, y: -16}
-        - {x: 9, y: -16}
-        - {x: 9, y: 14}
-        - {x: 4, y: 16}
-    - name: rogue_82
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_82
       rect:
         serializedVersion: 2
         x: 64
-        y: 32
+        y: 31
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 5, y: 16}
-        - {x: -5, y: 16}
-        - {x: -9, y: 10}
-        - {x: -9, y: -11}
-        - {x: -7, y: -16}
-        - {x: 8, y: -16}
-        - {x: 9, y: -10}
-        - {x: 9, y: 14}
-    - name: rogue_83
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_83
       rect:
         serializedVersion: 2
         x: 96
-        y: 32
+        y: 31
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -2, y: 16}
-        - {x: -7, y: 14}
-        - {x: -7, y: -13}
-        - {x: -5, y: -16}
-        - {x: 9, y: -16}
-        - {x: 9, y: 14}
-        - {x: 7, y: 16}
-    - name: rogue_84
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_84
       rect:
         serializedVersion: 2
         x: 128
-        y: 32
+        y: 31
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 6, y: 16}
-        - {x: -3, y: 16}
-        - {x: -6, y: 8}
-        - {x: -6, y: -11}
-        - {x: -5, y: -16}
-        - {x: 9, y: -16}
-        - {x: 12, y: -4}
-        - {x: 12, y: 3}
-        - {x: 10, y: 14}
-    - name: rogue_85
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_85
       rect:
         serializedVersion: 2
         x: 160
-        y: 32
+        y: 31
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 6, y: 16}
-        - {x: -3, y: 16}
-        - {x: -6, y: 8}
-        - {x: -6, y: -12}
-        - {x: -5, y: -16}
-        - {x: 12, y: -16}
-        - {x: 16, y: -5}
-        - {x: 16, y: 7}
-        - {x: 10, y: 13}
-    - name: rogue_86
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_86
       rect:
         serializedVersion: 2
         x: 192
-        y: 32
+        y: 31
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 10, y: -8}
-        - {x: 10, y: 2}
-        - {x: 6, y: 16}
-        - {x: -4, y: 16}
-        - {x: -6, y: 15}
-        - {x: -8, y: 3}
-        - {x: -8, y: -13}
-        - {x: -5, y: -16}
-        - {x: 7, y: -16}
-    - name: rogue_87
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_87
       rect:
         serializedVersion: 2
         x: 224
-        y: 32
+        y: 31
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 3, y: 16}
-        - {x: -6, y: 16}
-        - {x: -9, y: 12}
-        - {x: -9, y: -14}
-        - {x: -8, y: -16}
-        - {x: 7, y: -16}
-        - {x: 9, y: -11}
-        - {x: 9, y: 3}
-        - {x: 8, y: 14}
-    - name: rogue_88
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_88
       rect:
         serializedVersion: 2
         x: 256
-        y: 32
+        y: 31
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 3, y: 16}
-        - {x: -7, y: 16}
-        - {x: -9, y: 15}
-        - {x: -9, y: -12}
-        - {x: -6, y: -16}
-        - {x: 7, y: -16}
-        - {x: 9, y: -12}
-        - {x: 9, y: 3}
-        - {x: 8, y: 14}
-    - name: rogue_89
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: rogue_89
       rect:
         serializedVersion: 2
         x: 288
-        y: 32
+        y: 31
         width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -8, y: 16}
-        - {x: -8, y: -16}
-        - {x: 9, y: -16}
-        - {x: 9, y: 16}
-    - name: rogue_90
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -5, y: 16}
-        - {x: -8, y: 9}
-        - {x: -8, y: -12}
-        - {x: -7, y: -16}
-        - {x: 9, y: -16}
-        - {x: 9, y: 16}
-    - name: rogue_91
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -5, y: 16}
-        - {x: -8, y: 7}
-        - {x: -8, y: -15}
-        - {x: -7, y: -16}
-        - {x: 9, y: -16}
-        - {x: 9, y: 16}
-    - name: rogue_92
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 5, y: 16}
-        - {x: -5, y: 16}
-        - {x: -8, y: 9}
-        - {x: -8, y: -13}
-        - {x: -7, y: -16}
-        - {x: 7, y: -16}
-        - {x: 9, y: -13}
-        - {x: 9, y: 14}
-    - name: rogue_93
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 5, y: 15}
-        - {x: -2, y: 15}
-        - {x: -8, y: 12}
-        - {x: -8, y: -16}
-        - {x: 8, y: -16}
-        - {x: 9, y: -12}
-        - {x: 9, y: 7}
-    - name: rogue_94
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -4, y: 14}
-        - {x: -8, y: 6}
-        - {x: -8, y: -12}
-        - {x: -6, y: -16}
-        - {x: 10, y: -16}
-        - {x: 10, y: 4}
-        - {x: 5, y: 14}
-    - name: rogue_95
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -2, y: 11}
-        - {x: -4, y: 7}
-        - {x: -7, y: 0}
-        - {x: -7, y: -12}
-        - {x: -5, y: -16}
-        - {x: 9, y: -16}
-        - {x: 10, y: -15}
-        - {x: 10, y: 9}
-        - {x: 5, y: 11}
-    - name: rogue_96
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -2, y: 8}
-        - {x: -7, y: 0}
-        - {x: -7, y: -16}
-        - {x: 10, y: -16}
-        - {x: 10, y: 6}
-        - {x: 5, y: 8}
-    - name: rogue_97
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -4, y: 2}
-        - {x: -9, y: -15}
-        - {x: -9, y: -16}
-        - {x: 11, y: -16}
-        - {x: 11, y: -11}
-        - {x: 10, y: 1}
-        - {x: 5, y: 4}
-        - {x: 1, y: 4}
-    - name: rogue_98
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -10, y: -16}
-        - {x: 13, y: -16}
-        - {x: 13, y: -2}
-        - {x: 8, y: 0}
-        - {x: -1, y: 0}
-        - {x: -9, y: -13}
-    - name: rogue_99
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 1, y: -6}
-        - {x: -5, y: -8}
-        - {x: -12, y: -15}
-        - {x: -12, y: -16}
-        - {x: 15, y: -16}
-        - {x: 15, y: -13}
-        - {x: 9, y: -6}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 

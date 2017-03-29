@@ -72,4 +72,10 @@ public class Pause : MonoBehaviour
     {
         EventSystem.current.SetSelectedGameObject(null);
     }
+
+    public void ReturnToTitleScreen()
+    {
+        Time.timeScale = 1f;
+        PersistentManager.Instance.LoadScene(PersistentManager.Scenes.Title, PersistentManager.Instance.CurrentScene);
+    }
 }
