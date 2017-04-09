@@ -145,8 +145,8 @@ public class TitleManager : MonoBehaviour
         Screen.SetResolution(currentResolution.width, currentResolution.height, fullscreen);
     }
 
-    public void NewGame()
+    public void GoToLevelScene()
     {
-        PersistentManager.Instance.LoadScene(PersistentManager.Scenes.Test, PersistentManager.Scenes.Title);
+        PersistentManager.Instance.LoadScene(PersistentManager.Scenes.LevelSelect, PersistentManager.Scenes.Title);
     }
 }

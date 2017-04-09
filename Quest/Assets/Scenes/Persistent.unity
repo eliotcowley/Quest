@@ -527,6 +527,7 @@ MonoBehaviour:
   - TitleMenu
   - Test
   - Persistent
+  - LevelSelect
   loadingText: {fileID: 919759326}
   fader: {fileID: 193326478}
   smooth: 10
