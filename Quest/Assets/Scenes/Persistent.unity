@@ -475,6 +475,11 @@ Prefab:
       propertyPath: sceneBGM.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: 7f70995861520714a90d0d5327228c89, type: 3}
+    - target: {fileID: 114116490093978926, guid: e7f63bad5e79fd14586b62ca403b8c6d,
+        type: 2}
+      propertyPath: sceneBGM.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 7f70995861520714a90d0d5327228c89, type: 3}
     m_RemovedComponents:
     - {fileID: 114643516327113794, guid: e7f63bad5e79fd14586b62ca403b8c6d, type: 2}
     - {fileID: 114774747308953212, guid: e7f63bad5e79fd14586b62ca403b8c6d, type: 2}

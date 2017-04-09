@@ -147,6 +147,17 @@ public class TitleManager : MonoBehaviour
 
     public void GoToLevelScene()
     {
+        DisableButtons();
         PersistentManager.Instance.LoadScene(PersistentManager.Scenes.LevelSelect, PersistentManager.Scenes.Title);
+    }
+
+    private void DisableButtons()
+    {
+        Button[] buttons = titleMenu.GetComponentsInChildren<Button>();
+
+        foreach (Button button in buttons)
+        {
+            button.interactable = false;
+        }
     }
 }

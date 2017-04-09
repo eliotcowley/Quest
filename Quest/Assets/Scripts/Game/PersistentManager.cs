@@ -90,13 +90,30 @@ public class PersistentManager : MonoBehaviour
     public void LoadScene(Scenes sceneToLoad)
     {
         SceneManager.LoadSceneAsync(sceneNames[(int)sceneToLoad], LoadSceneMode.Additive);
-        audioController.Stop();
+
+        if (!((audioController.CurrentSong == AudioController.BGM.Title) && ((sceneToLoad == Scenes.Title) || (sceneToLoad == Scenes.LevelSelect))))
+        {
+            audioController.Stop();
+        }
+        
         CurrentScene = sceneToLoad;
 
         switch (sceneToLoad)
         {
             case startScene:
-                audioController.Play(AudioController.BGM.Title);
+                if ((audioController.CurrentSong != AudioController.BGM.Title) || 
+                    ((audioController.CurrentSong == AudioController.BGM.Title) && (!audioController.audioSource.isPlaying)))
+                {
+                    audioController.Play(AudioController.BGM.Title);
+                }
+                break;
+
+            case Scenes.LevelSelect:
+                if ((audioController.CurrentSong != AudioController.BGM.Title) ||
+                    ((audioController.CurrentSong == AudioController.BGM.Title) && (!audioController.audioSource.isPlaying)))
+                {
+                    audioController.Play(AudioController.BGM.Title);
+                }
                 break;
         }
     }

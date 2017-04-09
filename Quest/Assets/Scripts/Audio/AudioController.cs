@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class AudioController : MonoBehaviour
 {
+    [HideInInspector]
+    public BGM CurrentSong;
+
+    [HideInInspector]
+    public AudioSource audioSource;
+
     [SerializeField]
     private AudioClip[] sceneBGM;
-
-    private AudioSource audioSource;
 
     public enum BGM
     {
@@ -18,6 +22,7 @@ public class AudioController : MonoBehaviour
     {
         audioSource.clip = sceneBGM[(int)track];
         audioSource.Play();
+        CurrentSong = track;
     }
 
     public void Stop()
