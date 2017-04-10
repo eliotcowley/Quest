@@ -419,6 +419,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonToStartSelected: {fileID: 2143844899}
   backButtonName: Cancel
+  canvas: {fileID: 1872076762}
 --- !u!4 &131326496
 Transform:
   m_ObjectHideFlags: 0

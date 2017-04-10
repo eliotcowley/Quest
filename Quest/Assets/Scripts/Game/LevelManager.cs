@@ -11,9 +11,15 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     private string backButtonName = "Cancel";
 
+    [SerializeField]
+    private GameObject canvas;
+
+    private Button[] buttons;
+
     private void Start()
     {
         buttonToStartSelected.Select();
+        buttons = canvas.GetComponentsInChildren<Button>();
     }
 
     private void Update()
@@ -26,6 +32,11 @@ public class LevelManager : MonoBehaviour
 
     public void GoBackToTitleScene()
     {
+        foreach (Button button in buttons)
+        {
+            button.interactable = false;
+        }
+
         PersistentManager.Instance.LoadScene(PersistentManager.Scenes.Title, PersistentManager.Instance.CurrentScene);
     }
 
