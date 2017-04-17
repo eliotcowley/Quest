@@ -43,6 +43,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField]
     private float magicRate = 0.5f;
 
+    private PlayerMovement playerMovement;
     private Animator swordsmanAnimator;
     private Animator princessAnimator;
     private Material swordsmanMaterial;
@@ -66,11 +67,12 @@ public class PlayerAttack : MonoBehaviour
         beatCount = invincibleBeats;
         swordsmanInFront = true;
         sfxMixer = SFXMixer.instance;
+        playerMovement = GetComponent<PlayerMovement>();
     }
 
     private void Update()
     {
-        if (Pause.paused) return;
+        if ((Pause.paused) || (!playerMovement.canMove)) return;
         if (Input.GetButtonDown("Fire1") || (Input.GetButtonDown(controllerAButton)))
         {
             Attack();

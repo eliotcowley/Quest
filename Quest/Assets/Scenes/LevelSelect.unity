@@ -420,6 +420,8 @@ MonoBehaviour:
   buttonToStartSelected: {fileID: 2143844899}
   backButtonName: Cancel
   canvas: {fileID: 1872076762}
+  coinCountText: {fileID: 1548532770}
+  playerPrefsHighScore: HighScore
 --- !u!4 &131326496
 Transform:
   m_ObjectHideFlags: 0

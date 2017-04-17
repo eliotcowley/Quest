@@ -14,6 +14,7 @@ public class SpawnableObjectList : MonoBehaviour
     public static GameObject greenDiamondPrefab;
     public static GameObject orangeDiamondPrefab;
     public static GameObject barrierPrefab;
+    public static GameObject goalPrefab;
 
     [HideInInspector]
     public static bool prefabsSet = false;
@@ -39,6 +40,7 @@ public class SpawnableObjectList : MonoBehaviour
         greenDiamondPrefab = spawnObjects.greenDiamondPrefab;
         orangeDiamondPrefab = spawnObjects.orangeDiamondPrefab;
         barrierPrefab = spawnObjects.barrierPrefab;
+        goalPrefab = spawnObjects.goalPrefab;
 
         objects = new[]
         {
@@ -75,7 +77,8 @@ public class SpawnableObjectList : MonoBehaviour
             new SpawnableObject(2, blueDiamondPrefab, 1),
             new SpawnableObject(2, greenDiamondPrefab, 2),
             new SpawnableObject(2, orangeDiamondPrefab, 0),
-            new SpawnableObject(2, barrierPrefab, 1)
+            new SpawnableObject(2, barrierPrefab, 1),
+            new SpawnableObject(4, goalPrefab, 1)
         };
     }
 }

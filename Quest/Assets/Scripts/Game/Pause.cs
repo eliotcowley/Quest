@@ -17,6 +17,9 @@ public class Pause : MonoBehaviour
     [SerializeField]
     private Button pauseButton;
 
+    [SerializeField]
+    private PlayerMovement playerMovement;
+
     public static bool paused = false;
     public RhythmTool rhythmTool;
 
@@ -30,7 +33,10 @@ public class Pause : MonoBehaviour
             }
             else
             {
-                PauseGame();
+                if (playerMovement.canMove)
+                {
+                    PauseGame();
+                }
             }
         }
     }

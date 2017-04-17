@@ -12,6 +12,7 @@ public class SpawnObjects : MonoBehaviour
     public GameObject greenDiamondPrefab;
     public GameObject orangeDiamondPrefab;
     public GameObject barrierPrefab;
+    public GameObject goalPrefab;
 
     [SerializeField]
     private Transform[] positions;
@@ -96,6 +97,11 @@ public class SpawnObjects : MonoBehaviour
             case "Barrier":
                 prefab = pool.PullFromPool("Barrier");
                 obj = barrierPrefab;
+                break;
+
+            case "Goal":
+                prefab = pool.PullFromPool("Goal");
+                obj = goalPrefab;
                 break;
 
             default:

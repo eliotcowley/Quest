@@ -14,12 +14,19 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     private GameObject canvas;
 
+    [SerializeField]
+    private Text coinCountText;
+
+    [SerializeField]
+    private string playerPrefsHighScore = "HighScore";
+
     private Button[] buttons;
 
     private void Start()
     {
         buttonToStartSelected.Select();
         buttons = canvas.GetComponentsInChildren<Button>();
+        coinCountText.text = PlayerPrefs.GetInt(playerPrefsHighScore, 0).ToString();
     }
 
     private void Update()

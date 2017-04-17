@@ -3,7 +3,7 @@
 public class PlayerMovement : MonoBehaviour
 {
     [HideInInspector]
-    public bool canAttack = true;
+    public bool canMove = true;
 
     [SerializeField]
     private Transform[] tracks;
@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Pause.paused) return;
+        if ((Pause.paused) || (!canMove))  return;
         if (Input.GetButtonDown("Up") || inputManager.GetDpadUp())
         {
             MoveUp();
