@@ -20,6 +20,15 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     private string playerPrefsHighScore = "HighScore";
 
+    [SerializeField]
+    private GameObject blueDiamond;
+
+    [SerializeField]
+    private GameObject greenDiamond;
+
+    [SerializeField]
+    private GameObject orangeDiamond;
+
     private Button[] buttons;
 
     private void Start()
@@ -27,6 +36,21 @@ public class LevelManager : MonoBehaviour
         buttonToStartSelected.Select();
         buttons = canvas.GetComponentsInChildren<Button>();
         coinCountText.text = PlayerPrefs.GetInt(playerPrefsHighScore, 0).ToString();
+
+        if (PlayerPrefs.GetInt("Blue", 0) == 1)
+        {
+            blueDiamond.SetActive(true);
+        }
+
+        if (PlayerPrefs.GetInt("Green", 0) == 1)
+        {
+            greenDiamond.SetActive(true);
+        }
+
+        if (PlayerPrefs.GetInt("Orange", 0) == 1)
+        {
+            orangeDiamond.SetActive(true);
+        }
     }
 
     private void Update()

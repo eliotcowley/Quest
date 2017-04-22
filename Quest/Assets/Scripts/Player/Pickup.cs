@@ -77,7 +77,7 @@ public class Pickup : MonoBehaviour
 
             case blueDiamondTag:
                 blueDiamondUI.SetActive(true);
-                gm.diamonds++;
+                gm.diamonds[0] = true;
                 gm.pool.AddToPool(other.gameObject);
                 sfxMixer.PlaySound(SFXMixer.Sounds.Diamond);
                 diamondsThisLevel++;
@@ -85,7 +85,7 @@ public class Pickup : MonoBehaviour
 
             case greenDiamondTag:
                 greenDiamondUI.SetActive(true);
-                gm.diamonds++;
+                gm.diamonds[1] = true;
                 gm.pool.AddToPool(other.gameObject);
                 sfxMixer.PlaySound(SFXMixer.Sounds.Diamond);
                 diamondsThisLevel++;
@@ -93,7 +93,7 @@ public class Pickup : MonoBehaviour
 
             case orangeDiamondTag:
                 orangeDiamondUI.SetActive(true);
-                gm.diamonds++;
+                gm.diamonds[2] = true;
                 gm.pool.AddToPool(other.gameObject);
                 sfxMixer.PlaySound(SFXMixer.Sounds.Diamond);
                 diamondsThisLevel++;

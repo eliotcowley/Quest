@@ -9,13 +9,13 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     [HideInInspector]
+    public bool[] diamonds;
+
+    [HideInInspector]
     public ObjectPool pool;
 
     [HideInInspector]
     public int coins;
-
-    [HideInInspector]
-    public int diamonds;
 
     public int scrollSpeed;
     public RhythmTool rhythmTool;
@@ -43,6 +43,15 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private Text coinText;
+
+    [SerializeField]
+    private GameObject blueDiamondStat;
+
+    [SerializeField]
+    private GameObject greenDiamondStat;
+
+    [SerializeField]
+    private GameObject orangeDiamondStat;
 
     private int currentObj;
 
@@ -81,6 +90,8 @@ public class GameManager : MonoBehaviour
             default:
                 break;
         }
+
+        diamonds = new bool[3];
     }
 
     void Update()
@@ -112,6 +123,24 @@ public class GameManager : MonoBehaviour
         {
             PlayerPrefs.SetInt(playerPrefsHighScore, coins);
             highScoreText.SetActive(true);
+        }
+
+        if (diamonds[0] == true)
+        {
+            PlayerPrefs.SetInt("Blue", 1);
+            blueDiamondStat.SetActive(true);
+        }
+
+        if (diamonds[1] == true)
+        {
+            PlayerPrefs.SetInt("Green", 1);
+            greenDiamondStat.SetActive(true);
+        }
+
+        if (diamonds[2] == true)
+        {
+            PlayerPrefs.SetInt("Orange", 1);
+            orangeDiamondStat.SetActive(true);
         }
     }
 
