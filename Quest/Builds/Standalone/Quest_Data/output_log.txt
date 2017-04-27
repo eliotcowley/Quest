@@ -2,10 +2,10 @@ Mono path[0] = 'C:/Users/elcowle.REDMOND/Documents/GitHub/Quest/Quest/Builds/Sta
 Mono path[1] = 'C:/Users/elcowle.REDMOND/Documents/GitHub/Quest/Quest/Builds/Standalone/Quest_Data/Mono'
 Mono config path = 'C:/Users/elcowle.REDMOND/Documents/GitHub/Quest/Quest/Builds/Standalone/Quest_Data/Mono/etc'
 PlayerConnection initialized from C:/Users/elcowle.REDMOND/Documents/GitHub/Quest/Quest/Builds/Standalone/Quest_Data (debug = 0)
-PlayerConnection initialized network socket : 0.0.0.0 55449
-Broadcasting "[IP] 169.254.80.80 [Port] 55449 [Flags] 2 [Guid] 2770264716 [EditorId] 2962725705 [Version] 1048832 [Id] WindowsPlayer(ELIOT-SURFACE) [Debug] 0" to [169.254.255.255:54997]...
-Started listening to [0.0.0.0:55449]
-PlayerConnection already initialized - listening to [0.0.0.0:55449]
+PlayerConnection initialized network socket : 0.0.0.0 55247
+Broadcasting "[IP] 169.254.80.80 [Port] 55247 [Flags] 2 [Guid] 2524331969 [EditorId] 2382603949 [Version] 1048832 [Id] WindowsPlayer(ELIOT-SURFACE) [Debug] 0" to [169.254.255.255:54997]...
+Started listening to [0.0.0.0:55247]
+PlayerConnection already initialized - listening to [0.0.0.0:55247]
 Player data archive not found at `C:/Users/elcowle.REDMOND/Documents/GitHub/Quest/Quest/Builds/Standalone/Quest_Data/data.unity3d`, using local filesystemInitialize engine version: 5.6.0f3 (497a0f351392)
 GfxDevice: creating device client; threaded=1
 Direct3D:
@@ -25,37 +25,15 @@ Platform assembly: C:\Users\elcowle.REDMOND\Documents\GitHub\Quest\Quest\Builds\
 Loading C:\Users\elcowle.REDMOND\Documents\GitHub\Quest\Quest\Builds\Standalone\Quest_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: C:\Users\elcowle.REDMOND\Documents\GitHub\Quest\Quest\Builds\Standalone\Quest_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading C:\Users\elcowle.REDMOND\Documents\GitHub\Quest\Quest\Builds\Standalone\Quest_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.233 seconds
+- Completed reload, in  0.245 seconds
 Platform assembly: C:\Users\elcowle.REDMOND\Documents\GitHub\Quest\Quest\Builds\Standalone\Quest_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\elcowle.REDMOND\Documents\GitHub\Quest\Quest\Builds\Standalone\Quest_Data\Managed\System.dll (this message is harmless)
-desktop: 3000x2000 60Hz; virtual: 3000x2000 at 0,0
 <RI> Initializing input.
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
+desktop: 3000x2000 60Hz; virtual: 3000x2000 at 0,0
 <RI> Initialized touch support.
-UnloadTime: 2.749632 ms
-Joysticks connected: True
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-GameManager:Start() (at C:\Users\elcowle.REDMOND\Documents\GitHub\Quest\Quest\Assets\Scripts\Game\GameManager.cs:79)
- 
-(Filename: C:/Users/elcowle.REDMOND/Documents/GitHub/Quest/Quest/Assets/Scripts/Game/GameManager.cs Line: 79)
-
-Song loaded
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-BeatManager:OnReadyToPlay() (at C:\Users\elcowle.REDMOND\Documents\GitHub\Quest\Quest\Assets\Scripts\Audio\BeatManager.cs:22)
-UnityEngine.GameObject:SendMessage(String, Object, SendMessageOptions)
-UnityEngine.GameObject:SendMessage(String, SendMessageOptions) (at C:\buildslave\unity\build\artifacts\generated\common\runtime\GameObjectBindings.gen.cs:348)
-<AsyncAnalyze>c__Iterator1:MoveNext() (at C:\Users\elcowle.REDMOND\Documents\GitHub\Quest\Quest\Assets\RhythmTool\Scripts\RhythmTool.cs:511)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
- 
-(Filename: C:/Users/elcowle.REDMOND/Documents/GitHub/Quest/Quest/Assets/Scripts/Audio/BeatManager.cs Line: 22)
-
+UnloadTime: 4.360389 ms
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 4b28 -> priority: 1 
-  Thread -> id: 5b5c -> priority: 1 
+  Thread -> id: 56fc -> priority: 1 
+  Thread -> id: 3f5c -> priority: 1 
