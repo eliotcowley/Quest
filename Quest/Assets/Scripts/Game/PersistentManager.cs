@@ -47,7 +47,8 @@ public class PersistentManager : MonoBehaviour
         Title = 0,
         Test = 1,
         Persistent = 2,
-        LevelSelect = 3
+        LevelSelect = 3,
+        Level1_2 = 4
     }
 
     private void Start()

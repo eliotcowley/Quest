@@ -81,12 +81,17 @@ public class GameManager : MonoBehaviour
         switch (PersistentManager.Instance.CurrentScene)
         {
             case PersistentManager.Scenes.Title:
+            case PersistentManager.Scenes.Persistent:
                 break;
+
             case PersistentManager.Scenes.Test:
                 songText.text = "Checkpoint - Nitro Fun, Hyper Potions";
                 break;
-            case PersistentManager.Scenes.Persistent:
+
+            case PersistentManager.Scenes.Level1_2:
+                songText.text = "Cyberpunk Moonlight Sonata - Joth";
                 break;
+   
             default:
                 break;
         }

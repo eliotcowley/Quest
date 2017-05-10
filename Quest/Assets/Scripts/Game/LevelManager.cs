@@ -79,6 +79,10 @@ public class LevelManager : MonoBehaviour
                 PersistentManager.Instance.LoadScene(PersistentManager.Scenes.Test, PersistentManager.Instance.CurrentScene);
                 break;
 
+            case 2:
+                PersistentManager.Instance.LoadScene(PersistentManager.Scenes.Level1_2, PersistentManager.Instance.CurrentScene);
+                break;
+
             default:
                 break;
         }
