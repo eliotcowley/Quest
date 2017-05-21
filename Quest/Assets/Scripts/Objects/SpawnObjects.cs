@@ -30,6 +30,7 @@ public class SpawnObjects : MonoBehaviour
     private float currentSample;
     private int currentBeat = 0;
     private int nextBeat;
+    private SpawnableObject[] objectList;
 
     private void Start()
     {
@@ -39,16 +40,17 @@ public class SpawnObjects : MonoBehaviour
 
     public void Spawn()
     {
+        Debug.Log("Spawn");
         currentBeat++;
 
-        if (!SpawnableObjectList.prefabsSet || (index >= SpawnableObjectList.objects.Length) || (currentBeat < nextBeat))
+        if (!SpawnableObjectList.prefabsSet || (index >= objectList.Length) || (currentBeat < nextBeat))
         {
             return;
         }
 
         GameObject prefab;
-        nextPosition = SpawnableObjectList.objects[index].trackNum;
-        nextPrefab = SpawnableObjectList.objects[index++].go;
+        nextPosition = objectList[index].trackNum;
+        nextPrefab = objectList[index++].go;
 
         if (nextPrefab == null)
         {
@@ -119,11 +121,26 @@ public class SpawnObjects : MonoBehaviour
             prefab.transform.position = positions[nextPosition].position;
         }
 
-        if (index < SpawnableObjectList.objects.Length)
+        if (index < objectList.Length)
         {
-            nextBeat = SpawnableObjectList.objects[index].beatNum;
+            nextBeat = objectList[index].beatNum;
         }
         
         currentBeat = 0;
+    }
+
+    public void SetupList()
+    {
+        int level = PersistentManager.Instance.GetLevel();
+        Debug.Log("Level " + level);
+
+        if (level == -1)
+        {
+            Debug.LogError("ERROR: No object list found for this level");
+        }
+        else
+        {
+            objectList = (SpawnableObject[])SpawnableObjectList.objects[level];
+        }
     }
 }

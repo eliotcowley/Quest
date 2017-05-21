@@ -7,7 +7,7 @@ public class SpawnableObjectList : MonoBehaviour
 
     public static GameObject coinPrefab;
     public static GameObject ghostPrefab;
-    public static SpawnableObject[] objects;
+    public static ArrayList objects;
     public static GameObject heartPrefab;
     public static GameObject starPrefab;
     public static GameObject blueDiamondPrefab;
@@ -42,43 +42,48 @@ public class SpawnableObjectList : MonoBehaviour
         barrierPrefab = spawnObjects.barrierPrefab;
         goalPrefab = spawnObjects.goalPrefab;
 
-        objects = new[]
+        objects = new ArrayList
         {
-            // beatNum, prefab, trackNum
-            new SpawnableObject(0, coinPrefab, 1),
-            new SpawnableObject(1, coinPrefab, 1),
-            new SpawnableObject(1, coinPrefab, 1),
-            new SpawnableObject(1, coinPrefab, 1),
-            new SpawnableObject(2, coinPrefab, 1),
-            new SpawnableObject(2, coinPrefab, 0),
-            new SpawnableObject(2, coinPrefab, 1),
-            new SpawnableObject(2, coinPrefab, 2),
-            new SpawnableObject(2, coinPrefab, 1),
-            new SpawnableObject(2, coinPrefab, 0),
-            new SpawnableObject(2, coinPrefab, 1),
-            new SpawnableObject(2, coinPrefab, 2),
-            new SpawnableObject(1, coinPrefab, 1),
-            new SpawnableObject(1, coinPrefab, 0),
-            new SpawnableObject(1, coinPrefab, 1),
-            new SpawnableObject(1, coinPrefab, 2),
-            new SpawnableObject(1, coinPrefab, 1),
-            new SpawnableObject(1, coinPrefab, 0),
-            new SpawnableObject(1, coinPrefab, 1),
-            new SpawnableObject(1, coinPrefab, 2),
-            new SpawnableObject(2, ghostPrefab, 1),
-            new SpawnableObject(4, ghostPrefab, 0),
-            new SpawnableObject(1, coinPrefab, 1),
-            new SpawnableObject(1, coinPrefab, 0),
-            new SpawnableObject(2, ghostPrefab, 2),
-            new SpawnableObject(2, heartPrefab, 1),
-            new SpawnableObject(2, starPrefab, 1),
-            new SpawnableObject(2, ghostPrefab, 1),
-            new SpawnableObject(1, ghostPrefab, 0),
-            new SpawnableObject(2, blueDiamondPrefab, 1),
-            new SpawnableObject(2, greenDiamondPrefab, 2),
-            new SpawnableObject(2, orangeDiamondPrefab, 0),
-            new SpawnableObject(2, barrierPrefab, 1),
-            new SpawnableObject(4, goalPrefab, 1)
+            new SpawnableObject[]
+            {
+                // beatNum, prefab, trackNum
+                new SpawnableObject(0, coinPrefab, 1),
+                new SpawnableObject(1, coinPrefab, 1),
+                new SpawnableObject(1, coinPrefab, 1),
+                new SpawnableObject(1, coinPrefab, 1),
+                new SpawnableObject(2, coinPrefab, 1),
+                new SpawnableObject(2, coinPrefab, 0),
+                new SpawnableObject(2, coinPrefab, 1),
+                new SpawnableObject(2, coinPrefab, 2),
+                new SpawnableObject(2, coinPrefab, 1),
+                new SpawnableObject(2, coinPrefab, 0),
+                new SpawnableObject(2, coinPrefab, 1),
+                new SpawnableObject(2, coinPrefab, 2),
+                new SpawnableObject(1, coinPrefab, 1),
+                new SpawnableObject(1, coinPrefab, 0),
+                new SpawnableObject(1, coinPrefab, 1),
+                new SpawnableObject(1, coinPrefab, 2),
+                new SpawnableObject(1, coinPrefab, 1),
+                new SpawnableObject(1, coinPrefab, 0),
+                new SpawnableObject(1, coinPrefab, 1),
+                new SpawnableObject(1, coinPrefab, 2),
+                new SpawnableObject(2, ghostPrefab, 1),
+                new SpawnableObject(4, ghostPrefab, 0),
+                new SpawnableObject(1, coinPrefab, 1),
+                new SpawnableObject(1, coinPrefab, 0),
+                new SpawnableObject(2, ghostPrefab, 2),
+                new SpawnableObject(2, heartPrefab, 1),
+                new SpawnableObject(2, starPrefab, 1),
+                new SpawnableObject(2, ghostPrefab, 1),
+                new SpawnableObject(1, ghostPrefab, 0),
+                new SpawnableObject(2, blueDiamondPrefab, 1),
+                new SpawnableObject(2, greenDiamondPrefab, 2),
+                new SpawnableObject(2, orangeDiamondPrefab, 0),
+                new SpawnableObject(2, barrierPrefab, 1),
+                new SpawnableObject(4, goalPrefab, 1)
+            }
         };
+
+        spawnObjects.SetupList();
     }
 }

@@ -119,6 +119,21 @@ public class PersistentManager : MonoBehaviour
         }
     }
 
+    public int GetLevel()
+    {
+        switch (CurrentScene)
+        {
+            case Scenes.Test:
+                return 0;
+       
+            case Scenes.Level1_2:
+                return 1;
+
+            default:
+                return -1;
+        }
+    }
+
     private void SceneManager_sceneUnloaded(Scene scene)
     {
         persistentCamera.SetActive(true);
