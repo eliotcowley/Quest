@@ -44,6 +44,7 @@ public class SpawnableObjectList : MonoBehaviour
 
         objects = new ArrayList
         {
+            // Level 0
             new SpawnableObject[]
             {
                 // beatNum, prefab, trackNum
@@ -81,6 +82,25 @@ public class SpawnableObjectList : MonoBehaviour
                 new SpawnableObject(2, orangeDiamondPrefab, 0),
                 new SpawnableObject(2, barrierPrefab, 1),
                 new SpawnableObject(4, goalPrefab, 1)
+            },
+
+            // Level 1
+            new SpawnableObject[]
+            {
+                // beatNum, prefab, trackNum
+                new SpawnableObject(0, coinPrefab, 1),
+                new SpawnableObject(1, coinPrefab, 1),
+                new SpawnableObject(1, coinPrefab, 1),
+                new SpawnableObject(1, coinPrefab, 1),
+                new SpawnableObject(1, coinPrefab, 1),
+                new SpawnableObject(1, coinPrefab, 1),
+                new SpawnableObject(1, coinPrefab, 1),
+                new SpawnableObject(1, coinPrefab, 1),
+                new SpawnableObject(1, coinPrefab, 1),
+                new SpawnableObject(1, coinPrefab, 1),
+                new SpawnableObject(1, coinPrefab, 1),
+                new SpawnableObject(1, coinPrefab, 1),
+                new SpawnableObject(1, coinPrefab, 1)
             }
         };
 
