@@ -22,6 +22,9 @@ public class TitleManager : MonoBehaviour
     private GameObject optionsMenu;
 
     [SerializeField]
+    private GameObject levelSelectionMenu;
+
+    [SerializeField]
     private Text fullscreenButtonText;
 
     [SerializeField]
@@ -42,10 +45,17 @@ public class TitleManager : MonoBehaviour
     [SerializeField]
     private Button fullScreenButton;
 
+    [SerializeField]
+    private Animator titleTextAnimator;
+
     private bool fullscreen;
     private Resolution[] resolutions;
     private Resolution currentResolution;
     private int resolutionIndex = 0;
+    private Button[] mainMenuButtons;
+    private Button[] levelSelectionButtons;
+    private Animator[] mainMenuButtonAnimators;
+    private Animator[] levelSelectionAnimators;
 
     private void Start()
     {
@@ -68,6 +78,10 @@ public class TitleManager : MonoBehaviour
         resolutionText.text = currentResolution.width + " x " + currentResolution.height;
         musicSlider.value = GetMusicVolume();
         Pool = GetComponent<ObjectPool>();
+        mainMenuButtons = titleMenu.GetComponentsInChildren<Button>();
+        mainMenuButtonAnimators = titleMenu.GetComponentsInChildren<Animator>();
+        levelSelectionAnimators = levelSelectionMenu.GetComponentsInChildren<Animator>();
+        levelSelectionButtons = levelSelectionMenu.GetComponentsInChildren<Button>();
     }
 
     private void Update()
@@ -161,17 +175,68 @@ public class TitleManager : MonoBehaviour
 
     public void GoToLevelScene()
     {
-        DisableButtons();
-        PersistentManager.Instance.LoadScene(PersistentManager.Scenes.LevelSelect, PersistentManager.Scenes.Title);
+        StartCoroutine(OpenLevelSelection());
     }
 
-    private void DisableButtons()
+    public void GoHomeFromLevelSelection()
     {
-        Button[] buttons = titleMenu.GetComponentsInChildren<Button>();
+        StartCoroutine(OpenHomeFromLevelSelection());
+    }
 
-        foreach (Button button in buttons)
+    private IEnumerator OpenLevelSelection()
+    {
+        foreach (Button button in mainMenuButtons)
         {
             button.interactable = false;
+        }
+
+        // Fade out main menu buttons
+        foreach (Animator animator in mainMenuButtonAnimators)
+        {
+            animator.SetTrigger(Constants.FadeOutAnimatorTrigger);
+        }
+
+        titleTextAnimator.SetTrigger(Constants.FadeOutAnimatorTrigger);
+        yield return new WaitForSeconds(0.5f);
+        titleMenu.SetActive(false);
+        levelSelectionMenu.SetActive(true);
+
+        foreach (Animator animator in levelSelectionAnimators)
+        {
+            animator.SetTrigger(Constants.FadeInAnimatorTrigger);
+        }
+
+        foreach (Button button in levelSelectionButtons)
+        {
+            button.interactable = true;
+        }
+    }
+
+    private IEnumerator OpenHomeFromLevelSelection()
+    {
+        foreach (Button button in levelSelectionButtons)
+        {
+            button.interactable = false;
+        }
+
+        foreach (Animator animator in levelSelectionAnimators)
+        {
+            animator.SetTrigger(Constants.FadeOutAnimatorTrigger);
+        }
+
+        titleTextAnimator.SetTrigger(Constants.FadeInAnimatorTrigger);
+        yield return new WaitForSeconds(0.5f);
+        titleMenu.SetActive(true);
+        levelSelectionMenu.SetActive(false);
+
+        foreach (Animator animator in mainMenuButtonAnimators)
+        {
+            animator.SetTrigger(Constants.FadeInAnimatorTrigger);
+        }
+
+        foreach (Button button in mainMenuButtons)
+        {
+            button.interactable = true;
         }
     }
 }
