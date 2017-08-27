@@ -25,6 +25,9 @@ public class TitleManager : MonoBehaviour
     private GameObject levelSelectionMenu;
 
     [SerializeField]
+    private Button levelSelectionButtonToStartSelected;
+
+    [SerializeField]
     private Text fullscreenButtonText;
 
     [SerializeField]
@@ -48,14 +51,19 @@ public class TitleManager : MonoBehaviour
     [SerializeField]
     private Animator titleTextAnimator;
 
+    [SerializeField]
+    private float fadeTime = 0.5f;
+
     private bool fullscreen;
     private Resolution[] resolutions;
     private Resolution currentResolution;
     private int resolutionIndex = 0;
     private Button[] mainMenuButtons;
     private Button[] levelSelectionButtons;
+    private Selectable[] optionsSelectables;
     private Animator[] mainMenuButtonAnimators;
     private Animator[] levelSelectionAnimators;
+    private Animator[] optionsAnimators;
 
     private void Start()
     {
@@ -82,6 +90,8 @@ public class TitleManager : MonoBehaviour
         mainMenuButtonAnimators = titleMenu.GetComponentsInChildren<Animator>();
         levelSelectionAnimators = levelSelectionMenu.GetComponentsInChildren<Animator>();
         levelSelectionButtons = levelSelectionMenu.GetComponentsInChildren<Button>();
+        optionsSelectables = optionsMenu.GetComponentsInChildren<Selectable>();
+        optionsAnimators = optionsMenu.GetComponentsInChildren<Animator>();
     }
 
     private void Update()
@@ -183,6 +193,16 @@ public class TitleManager : MonoBehaviour
         StartCoroutine(OpenHomeFromLevelSelection());
     }
 
+    public void GoToOptions()
+    {
+        StartCoroutine(OpenOptions());
+    }
+
+    public void GoHomeFromOptions()
+    {
+        StartCoroutine(OpenHomeFromOptions());
+    }
+
     private IEnumerator OpenLevelSelection()
     {
         foreach (Button button in mainMenuButtons)
@@ -197,7 +217,7 @@ public class TitleManager : MonoBehaviour
         }
 
         titleTextAnimator.SetTrigger(Constants.FadeOutAnimatorTrigger);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(fadeTime);
         titleMenu.SetActive(false);
         levelSelectionMenu.SetActive(true);
 
@@ -210,6 +230,8 @@ public class TitleManager : MonoBehaviour
         {
             button.interactable = true;
         }
+
+        levelSelectionButtonToStartSelected.Select();
     }
 
     private IEnumerator OpenHomeFromLevelSelection()
@@ -225,7 +247,7 @@ public class TitleManager : MonoBehaviour
         }
 
         titleTextAnimator.SetTrigger(Constants.FadeInAnimatorTrigger);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(fadeTime);
         titleMenu.SetActive(true);
         levelSelectionMenu.SetActive(false);
 
@@ -237,6 +259,83 @@ public class TitleManager : MonoBehaviour
         foreach (Button button in mainMenuButtons)
         {
             button.interactable = true;
+        }
+
+        startButton.Select();
+    }
+
+    private IEnumerator OpenOptions()
+    {
+        foreach (Button button in mainMenuButtons)
+        {
+            button.interactable = false;
+        }
+
+        foreach (Animator animator in mainMenuButtonAnimators)
+        {
+            animator.SetTrigger(Constants.FadeOutAnimatorTrigger);
+        }
+
+        yield return new WaitForSeconds(fadeTime);
+        optionsMenu.SetActive(true);
+        titleMenu.SetActive(false);
+
+        foreach (Animator animator in optionsAnimators)
+        {
+            animator.SetTrigger(Constants.FadeInAnimatorTrigger);
+        }
+
+        foreach (Selectable selectable in optionsSelectables)
+        {
+            selectable.interactable = true;
+        }
+
+        fullScreenButton.Select();
+    }
+
+    private IEnumerator OpenHomeFromOptions()
+    {
+        foreach (Selectable selectable in optionsSelectables)
+        {
+            selectable.interactable = false;
+        }
+
+        foreach (Animator animator in optionsAnimators)
+        {
+            animator.SetTrigger(Constants.FadeOutAnimatorTrigger);
+        }
+
+        yield return new WaitForSeconds(fadeTime);
+        titleMenu.SetActive(true);
+        optionsMenu.SetActive(false);
+
+        foreach (Animator animator in mainMenuButtonAnimators)
+        {
+            animator.SetTrigger(Constants.FadeInAnimatorTrigger);
+        }
+
+        foreach (Button button in mainMenuButtons)
+        {
+            button.interactable = true;
+        }
+
+        startButton.Select();
+    }
+
+    public void LoadLevel(int level)
+    {
+        switch (level)
+        {
+            case 1:
+                PersistentManager.Instance.LoadScene(PersistentManager.Scenes.Test, PersistentManager.Instance.CurrentScene);
+                break;
+
+            case 2:
+                PersistentManager.Instance.LoadScene(PersistentManager.Scenes.Level1_2, PersistentManager.Instance.CurrentScene);
+                break;
+
+            default:
+                break;
         }
     }
 }

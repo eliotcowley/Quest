@@ -151,6 +151,6 @@ public class GameManager : MonoBehaviour
 
     public void ReturnToLevelSelection()
     {
-        PersistentManager.Instance.LoadScene(PersistentManager.Scenes.LevelSelect, PersistentManager.Instance.CurrentScene);
+        PersistentManager.Instance.LoadScene(PersistentManager.Scenes.Title, PersistentManager.Instance.CurrentScene);
     }
 }

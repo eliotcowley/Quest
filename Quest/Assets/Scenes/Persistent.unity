@@ -383,7 +383,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &919759325
 RectTransform:
   m_ObjectHideFlags: 0
@@ -554,9 +554,10 @@ MonoBehaviour:
   audioController: {fileID: 645356792}
   persistentCamera: {fileID: 525822825}
   sceneNames:
+  - Persistent
+  - TurnOnSound
   - TitleMenu
   - Test
-  - Persistent
   - LevelSelect
   - Level1_2
   loadingText: {fileID: 919759326}

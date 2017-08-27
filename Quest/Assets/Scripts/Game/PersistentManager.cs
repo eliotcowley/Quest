@@ -7,12 +7,13 @@ using UnityEngine.UI;
 public class PersistentManager : MonoBehaviour
 {
     public static PersistentManager Instance;
+    public Text loadingText;
 
     [HideInInspector]
     public Scenes CurrentScene = startScene;
 
     [SerializeField]
-    private const Scenes startScene = Scenes.Title;
+    private const Scenes startScene = Scenes.TurnOnSound;
 
     [SerializeField]
     private AudioController audioController;
@@ -22,9 +23,6 @@ public class PersistentManager : MonoBehaviour
 
     [SerializeField]
     private string[] sceneNames;
-
-    [SerializeField]
-    private Text loadingText;
 
     [SerializeField]
     private SpriteRenderer fader;
@@ -44,11 +42,12 @@ public class PersistentManager : MonoBehaviour
 
     public enum Scenes
     {
-        Title = 0,
-        Test = 1,
-        Persistent = 2,
-        LevelSelect = 3,
-        Level1_2 = 4
+        Persistent = 0,
+        TurnOnSound = 1,
+        Title = 2,
+        Test = 3,
+        LevelSelect = 4,
+        Level1_2 = 5
     }
 
     private void Start()
@@ -96,17 +95,13 @@ public class PersistentManager : MonoBehaviour
         {
             audioController.Stop();
         }
-        
+
         CurrentScene = sceneToLoad;
 
         switch (sceneToLoad)
         {
-            case startScene:
-                if ((audioController.CurrentSong != AudioController.BGM.Title) || 
-                    ((audioController.CurrentSong == AudioController.BGM.Title) && (!audioController.audioSource.isPlaying)))
-                {
-                    audioController.Play(AudioController.BGM.Title);
-                }
+            case Scenes.Title:
+                audioController.Play(AudioController.BGM.Title);
                 break;
 
             case Scenes.LevelSelect:
