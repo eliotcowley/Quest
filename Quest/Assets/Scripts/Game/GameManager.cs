@@ -3,6 +3,8 @@ using EliotScripts.ObjectPool;
 using UnityEngine.SceneManagement;
 using System;
 using UnityEngine.UI;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 
 public class GameManager : MonoBehaviour
 {
@@ -124,29 +126,28 @@ public class GameManager : MonoBehaviour
         playerMovement.canMove = false;
         coinText.text = coins.ToString();
 
-        if (coins > PlayerPrefs.GetInt(playerPrefsHighScore, 0))
+        if (coins > PersistentManager.Instance.GetHighScore(PersistentManager.Instance.GetLevel()))
         {
-            PlayerPrefs.SetInt(playerPrefsHighScore, coins);
+            PersistentManager.Instance.SetHighScore(PersistentManager.Instance.GetLevel(), coins);
             highScoreText.SetActive(true);
         }
 
         if (diamonds[0] == true)
         {
-            PlayerPrefs.SetInt("Blue", 1);
             blueDiamondStat.SetActive(true);
         }
 
         if (diamonds[1] == true)
         {
-            PlayerPrefs.SetInt("Green", 1);
             greenDiamondStat.SetActive(true);
         }
 
         if (diamonds[2] == true)
         {
-            PlayerPrefs.SetInt("Orange", 1);
             orangeDiamondStat.SetActive(true);
         }
+
+        PersistentManager.Instance.SetDiamonds(PersistentManager.Instance.GetLevel(), diamonds);
     }
 
     public void ReturnToLevelSelection()

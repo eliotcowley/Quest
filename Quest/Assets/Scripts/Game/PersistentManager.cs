@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 
 public class PersistentManager : MonoBehaviour
 {
@@ -39,6 +42,8 @@ public class PersistentManager : MonoBehaviour
     private Color fullAlpha = new Color(0f, 0f, 0f, 1f);
     private Scenes sceneToUnload;
     private Scenes sceneToLoad;
+    private int[] highScores;
+    private bool[,] diamonds;
 
     public enum Scenes
     {
@@ -46,8 +51,7 @@ public class PersistentManager : MonoBehaviour
         TurnOnSound = 1,
         Title = 2,
         Test = 3,
-        LevelSelect = 4,
-        Level1_2 = 5
+        Level1_2 = 4
     }
 
     private void Start()
@@ -65,6 +69,87 @@ public class PersistentManager : MonoBehaviour
 
         SceneManager.sceneLoaded += SceneManager_sceneLoaded;
         SceneManager.sceneUnloaded += SceneManager_sceneUnloaded;
+
+        highScores = new int[Constants.LevelCount];
+        diamonds = new bool[Constants.LevelCount, Constants.DiamondCount];
+
+        // TODO: Clear the save data - for debugging, remove later
+        //ClearData();
+    }
+
+    private void Save()
+    {
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Open(Constants.SaveDataFilePath, FileMode.OpenOrCreate);
+
+        SaveData data = new SaveData
+        {
+            HighScores = highScores,
+            Diamonds = diamonds
+        };
+
+        bf.Serialize(file, data);
+        file.Close();
+    }
+
+    private void Load()
+    {
+        if (File.Exists(Constants.SaveDataFilePath))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Constants.SaveDataFilePath, FileMode.Open);
+            SaveData data = (SaveData)bf.Deserialize(file);
+            file.Close();
+
+            highScores = data.HighScores;
+            diamonds = data.Diamonds;
+        }
+    }
+
+    public int GetHighScore(int level)
+    {
+        Load();
+        return highScores[level];
+    }
+
+    public void SetHighScore(int level, int score)
+    {
+        highScores[level] = score;
+        Save();
+    }
+
+    public bool[] GetDiamonds(int level)
+    {
+        Load();
+        bool[] _diamonds = new bool[Constants.DiamondCount];
+
+        for (int i = 0; i < _diamonds.Length; i++)
+        {
+            _diamonds[i] = diamonds[level, i];
+        }
+
+        return _diamonds;
+    }
+
+    public void SetDiamonds(int _level, bool[] _diamonds)
+    {
+        for (int i = 0; i < _diamonds.Length; i++)
+        {
+            diamonds[_level, i] = _diamonds[i];
+        }
+
+        Save();
+    }
+
+    private void ClearData()
+    {
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Open(Constants.SaveDataFilePath, FileMode.OpenOrCreate);
+
+        SaveData data = new SaveData();
+
+        bf.Serialize(file, data);
+        file.Close();
     }
 
     private void Update()
@@ -90,11 +175,7 @@ public class PersistentManager : MonoBehaviour
     public void LoadScene(Scenes sceneToLoad)
     {
         SceneManager.LoadSceneAsync(sceneNames[(int)sceneToLoad], LoadSceneMode.Additive);
-
-        if (!((audioController.CurrentSong == AudioController.BGM.Title) && ((sceneToLoad == Scenes.Title) || (sceneToLoad == Scenes.LevelSelect))))
-        {
-            audioController.Stop();
-        }
+        audioController.Stop();
 
         CurrentScene = sceneToLoad;
 
@@ -102,14 +183,6 @@ public class PersistentManager : MonoBehaviour
         {
             case Scenes.Title:
                 audioController.Play(AudioController.BGM.Title);
-                break;
-
-            case Scenes.LevelSelect:
-                if ((audioController.CurrentSong != AudioController.BGM.Title) ||
-                    ((audioController.CurrentSong == AudioController.BGM.Title) && (!audioController.audioSource.isPlaying)))
-                {
-                    audioController.Play(AudioController.BGM.Title);
-                }
                 break;
         }
     }
@@ -127,6 +200,11 @@ public class PersistentManager : MonoBehaviour
             default:
                 return -1;
         }
+    }
+
+    public int GetLevel(Scenes scene)
+    {
+        return scene - Scenes.Title;
     }
 
     private void SceneManager_sceneUnloaded(Scene scene)
@@ -170,4 +248,11 @@ public class PersistentManager : MonoBehaviour
         SceneManager.UnloadSceneAsync(sceneNames[(int)sceneToUnload]);
         LoadScene(sceneToLoad);
     }
+}
+
+public enum Diamond
+{
+    Blue,
+    Green,
+    Orange
 }

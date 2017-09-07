@@ -43,7 +43,10 @@ public class SpawnObjects : MonoBehaviour
         Debug.Log("Spawn");
         currentBeat++;
 
-        if (!SpawnableObjectList.prefabsSet || (index >= objectList.Length) || (currentBeat < nextBeat))
+        if (!SpawnableObjectList.prefabsSet
+            || (objectList == null)
+            || (index >= objectList.Length) 
+            || (currentBeat < nextBeat))
         {
             return;
         }

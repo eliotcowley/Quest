@@ -54,6 +54,12 @@ public class TitleManager : MonoBehaviour
     [SerializeField]
     private float fadeTime = 0.5f;
 
+    [SerializeField]
+    private Text coinCountText;
+
+    [SerializeField]
+    private GameObject diamondPanel;
+
     private bool fullscreen;
     private Resolution[] resolutions;
     private Resolution currentResolution;
@@ -64,6 +70,8 @@ public class TitleManager : MonoBehaviour
     private Animator[] mainMenuButtonAnimators;
     private Animator[] levelSelectionAnimators;
     private Animator[] optionsAnimators;
+    private int selectedLevel;
+    private List<GameObject> diamondImages;
 
     private void Start()
     {
@@ -92,6 +100,13 @@ public class TitleManager : MonoBehaviour
         levelSelectionButtons = levelSelectionMenu.GetComponentsInChildren<Button>();
         optionsSelectables = optionsMenu.GetComponentsInChildren<Selectable>();
         optionsAnimators = optionsMenu.GetComponentsInChildren<Animator>();
+
+        Transform[] diamondTransforms = diamondPanel.GetComponentsInChildren<Transform>();
+        diamondImages = new List<GameObject>();
+        foreach (Transform child in diamondTransforms)
+        {
+            diamondImages.Add(child.gameObject);
+        }
     }
 
     private void Update()
@@ -336,6 +351,25 @@ public class TitleManager : MonoBehaviour
 
             default:
                 break;
+        }
+    }
+
+    public void SetSelectedLevel(int level)
+    {
+        selectedLevel = level;
+        coinCountText.text = PersistentManager.Instance.GetHighScore(level-1).ToString();
+        bool[] diamonds = PersistentManager.Instance.GetDiamonds(level - 1);
+
+        for (int i = 1; i < diamondImages.Count; i++)
+        {
+            if (diamonds[i-1])
+            {
+                diamondImages[i].SetActive(true);
+            }
+            else
+            {
+                diamondImages[i].SetActive(false);
+            }
         }
     }
 }
