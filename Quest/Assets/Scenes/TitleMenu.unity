@@ -1273,6 +1273,21 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114981232939934772, guid: 85837384f713d4b40b6eb97f050c0ddb,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114981232939934772, guid: 85837384f713d4b40b6eb97f050c0ddb,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114981232939934772, guid: 85837384f713d4b40b6eb97f050c0ddb,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 85837384f713d4b40b6eb97f050c0ddb, type: 2}
   m_IsPrefabParent: 0
@@ -4154,6 +4169,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
 --- !u!4 &1596160102
 Transform:
   m_ObjectHideFlags: 0

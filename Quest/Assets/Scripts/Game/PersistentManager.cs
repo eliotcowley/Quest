@@ -162,6 +162,11 @@ public class PersistentManager : MonoBehaviour
         {
             fader.color = Color.Lerp(fader.color, zeroAlpha, smooth * Time.deltaTime);
         }
+
+        if (Input.GetKeyDown(KeyCode.Semicolon))
+        {
+            ClearData();
+        }
     }
 
     public void LoadScene(Scenes sceneToLoad, Scenes sceneToUnload)

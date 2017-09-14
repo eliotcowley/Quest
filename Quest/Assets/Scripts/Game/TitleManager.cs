@@ -71,7 +71,7 @@ public class TitleManager : MonoBehaviour
     private Animator[] levelSelectionAnimators;
     private Animator[] optionsAnimators;
     private int selectedLevel;
-    private List<GameObject> diamondImages;
+    private List<Image> diamondImages;
 
     private void Start()
     {
@@ -102,10 +102,11 @@ public class TitleManager : MonoBehaviour
         optionsAnimators = optionsMenu.GetComponentsInChildren<Animator>();
 
         Transform[] diamondTransforms = diamondPanel.GetComponentsInChildren<Transform>();
-        diamondImages = new List<GameObject>();
+        diamondImages = new List<Image>();
         foreach (Transform child in diamondTransforms)
         {
-            diamondImages.Add(child.gameObject);
+            Image image = child.GetComponent<Image>();
+            diamondImages.Add(image);
         }
     }
 
@@ -364,11 +365,11 @@ public class TitleManager : MonoBehaviour
         {
             if (diamonds[i-1])
             {
-                diamondImages[i].SetActive(true);
+                diamondImages[i].color = Color.white;
             }
             else
             {
-                diamondImages[i].SetActive(false);
+                diamondImages[i].color = Color.black;
             }
         }
     }

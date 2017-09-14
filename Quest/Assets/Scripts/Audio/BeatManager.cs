@@ -23,6 +23,12 @@ public class BeatManager : MonoBehaviour
             Debug.Log("Song loaded");
         }
 
+        StartCoroutine(PlaySong());
+    }
+
+    private IEnumerator PlaySong()
+    {
+        yield return new WaitForSeconds(1f);
         rhythmTool.Play();
     }
 }
