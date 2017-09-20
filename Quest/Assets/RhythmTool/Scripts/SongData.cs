@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
-using System.Runtime.Serialization.Formatters.Binary;
+//using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using System.Xml.Serialization;
 
 [System.Serializable]
 public class SongData
@@ -26,19 +27,31 @@ public class SongData
 
     public void Serialize()
     {
-        IFormatter formatter = new BinaryFormatter();
-        Stream stream = new FileStream(Application.persistentDataPath + Path.DirectorySeparatorChar + name + ".rthm", FileMode.Create, FileAccess.Write, FileShare.None);
-        formatter.Serialize(stream, this);
+        //IFormatter formatter = new BinaryFormatter();
+        //Stream stream = new FileStream(Application.persistentDataPath + Path.DirectorySeparatorChar + name + ".rthm", FileMode.Create, FileAccess.Write, FileShare.None);
+        //formatter.Serialize(stream, this);
 
-        stream.Close();
+        //stream.Close();
+
+        XmlSerializer serializer = new XmlSerializer(typeof(SongData));
+        FileStream stream = new FileStream(Application.persistentDataPath + Path.DirectorySeparatorChar + name + ".rthm", FileMode.Create, FileAccess.Write, FileShare.None);
+        serializer.Serialize(stream, this);
+        stream.Dispose();
     }
 
     public static SongData Deserialize(string name)
     {
-        IFormatter formatter = new BinaryFormatter();
-        Stream stream = new FileStream(Application.persistentDataPath + Path.DirectorySeparatorChar + name + ".rthm", FileMode.Open, FileAccess.Read, FileShare.Read);
+        //IFormatter formatter = new BinaryFormatter();
+        //Stream stream = new FileStream(Application.persistentDataPath + Path.DirectorySeparatorChar + name + ".rthm", FileMode.Open, FileAccess.Read, FileShare.Read);
+        //SongData obj = (SongData)formatter.Deserialize(stream);
+        //stream.Close();
+
+        //return obj;
+
+        XmlSerializer formatter = new XmlSerializer(typeof(SongData));
+        FileStream stream = new FileStream(Application.persistentDataPath + Path.DirectorySeparatorChar + name + ".rthm", FileMode.Open, FileAccess.Read, FileShare.Read);
         SongData obj = (SongData)formatter.Deserialize(stream);
-        stream.Close();
+        stream.Dispose();
 
         return obj;
     }

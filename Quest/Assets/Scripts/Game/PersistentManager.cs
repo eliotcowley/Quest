@@ -4,8 +4,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System;
-using System.Runtime.Serialization.Formatters.Binary;
+//using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using System.Xml.Serialization;
+
+#if NETFX_CORE
+using WinRTLegacy.IO;
+#endif
 
 public class PersistentManager : MonoBehaviour
 {
@@ -43,7 +48,7 @@ public class PersistentManager : MonoBehaviour
     private Scenes sceneToUnload;
     private Scenes sceneToLoad;
     private int[] highScores;
-    private bool[,] diamonds;
+    private BoolArray[] diamonds;
 
     public enum Scenes
     {
@@ -71,15 +76,18 @@ public class PersistentManager : MonoBehaviour
         SceneManager.sceneUnloaded += SceneManager_sceneUnloaded;
 
         highScores = new int[Constants.LevelCount];
-        diamonds = new bool[Constants.LevelCount, Constants.DiamondCount];
+
+        // Initialize jagged array
+        diamonds = new BoolArray[Constants.LevelCount];
 
         // TODO: Clear the save data - for debugging, remove later
-        //ClearData();
+        ClearData();
     }
 
     private void Save()
     {
-        BinaryFormatter bf = new BinaryFormatter();
+        //BinaryFormatter bf = new BinaryFormatter();
+        XmlSerializer serializer = new XmlSerializer(typeof(SaveData));
         FileStream file = File.Open(Constants.SaveDataFilePath, FileMode.OpenOrCreate);
 
         SaveData data = new SaveData
@@ -88,18 +96,21 @@ public class PersistentManager : MonoBehaviour
             Diamonds = diamonds
         };
 
-        bf.Serialize(file, data);
-        file.Close();
+        //bf.Serialize(file, data);
+        serializer.Serialize(file, data);
+        file.Dispose();
     }
 
     private void Load()
     {
         if (File.Exists(Constants.SaveDataFilePath))
         {
-            BinaryFormatter bf = new BinaryFormatter();
+            //BinaryFormatter bf = new BinaryFormatter();
+            XmlSerializer serializer = new XmlSerializer(typeof(SaveData));
             FileStream file = File.Open(Constants.SaveDataFilePath, FileMode.Open);
-            SaveData data = (SaveData)bf.Deserialize(file);
-            file.Close();
+            //SaveData data = (SaveData)bf.Deserialize(file);
+            SaveData data = (SaveData)serializer.Deserialize(file);
+            file.Dispose();
 
             highScores = data.HighScores;
             diamonds = data.Diamonds;
@@ -125,7 +136,7 @@ public class PersistentManager : MonoBehaviour
 
         for (int i = 0; i < _diamonds.Length; i++)
         {
-            _diamonds[i] = diamonds[level, i];
+            _diamonds[i] = diamonds[level].Diamonds[i];
         }
 
         return _diamonds;
@@ -135,7 +146,7 @@ public class PersistentManager : MonoBehaviour
     {
         for (int i = 0; i < _diamonds.Length; i++)
         {
-            diamonds[_level, i] = _diamonds[i];
+            diamonds[_level].Diamonds[i] = _diamonds[i];
         }
 
         Save();
@@ -143,13 +154,15 @@ public class PersistentManager : MonoBehaviour
 
     private void ClearData()
     {
-        BinaryFormatter bf = new BinaryFormatter();
+        //BinaryFormatter bf = new BinaryFormatter();
+        XmlSerializer serializer = new XmlSerializer(typeof(SaveData));
         FileStream file = File.Open(Constants.SaveDataFilePath, FileMode.OpenOrCreate);
 
         SaveData data = new SaveData();
 
-        bf.Serialize(file, data);
-        file.Close();
+        //bf.Serialize(file, data);
+        serializer.Serialize(file, data);
+        file.Dispose();
     }
 
     private void Update()

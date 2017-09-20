@@ -4,6 +4,11 @@ using System.Collections.Generic;
 using System.Threading;
 using System.IO;
 
+#if NETFX_CORE
+using Windows.System.Threading;
+using Windows.Foundation;
+#endif
+
 /// <summary> 
 /// RhythmTool.
 /// </summary>
@@ -480,6 +485,14 @@ public class RhythmTool : MonoBehaviour
         float[] s = new float[frames * frameSpacing * 2];
         audioSource.clip.GetData(s, 0);
 
+#if NETFX_CORE
+        IAsyncAction action = Windows.System.Threading.ThreadPool.RunAsync(workItem => BackGroundAnalyze(s));
+
+        while (action.Status == AsyncStatus.Started)
+        {
+            yield return null;
+        }
+#else
         Thread analyzeThread = new Thread(BackGroundAnalyze);
         analyzeThread.Start(s);
 
@@ -487,7 +500,7 @@ public class RhythmTool : MonoBehaviour
         {
             yield return null;
         }
-
+#endif
         //if a new song is queued at this point, stop
         if (queueRoutine != null)
         {

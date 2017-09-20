@@ -5,6 +5,10 @@ using System;
 
 using System.Threading;
 
+#if NETFX_CORE
+using Windows.System.Threading;
+#endif
+
 /// <summary>
 /// Class that tracks beats and finds BPM
 /// </summary>
@@ -337,8 +341,12 @@ public class BeatTracker
             }
 
             syncOld = sync;
-                        
+
+#if NETFX_CORE
+            Windows.System.Threading.ThreadPool.RunAsync(o => FindBeat());
+#else
             ThreadPool.QueueUserWorkItem(o => FindBeat());
+#endif
         }
 
         if (currentBeatLength > 5)
