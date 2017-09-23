@@ -7,10 +7,16 @@ using System;
 //using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using System.Xml.Serialization;
+using System.Xml;
 
-#if NETFX_CORE
-using WinRTLegacy.IO;
-#endif
+//#if NETFX_CORE
+//using WinRTLegacy.IO;
+//using XmlReader = WinRTLegacy.Xml.XmlReader;
+//using XmlWriter = WinRTLegacy.Xml.XmlWriter;
+//#else
+//using XmlReader = System.Xml.XmlReader;
+//using XmlWriter = System.Xml.XmlWriter;
+//#endif
 
 public class PersistentManager : MonoBehaviour
 {
@@ -80,6 +86,11 @@ public class PersistentManager : MonoBehaviour
         // Initialize jagged array
         diamonds = new BoolArray[Constants.LevelCount];
 
+        for (int i = 0; i < diamonds.Length; i++)
+        {
+            diamonds[i] = new BoolArray();
+        }
+
         // TODO: Clear the save data - for debugging, remove later
         ClearData();
     }
@@ -89,6 +100,9 @@ public class PersistentManager : MonoBehaviour
         //BinaryFormatter bf = new BinaryFormatter();
         XmlSerializer serializer = new XmlSerializer(typeof(SaveData));
         FileStream file = File.Open(Constants.SaveDataFilePath, FileMode.OpenOrCreate);
+        XmlWriterSettings settings = new XmlWriterSettings();
+        settings.Encoding = new System.Text.ASCIIEncoding();
+        XmlWriter writer = XmlWriter.Create(file, settings);
 
         SaveData data = new SaveData
         {
@@ -97,8 +111,8 @@ public class PersistentManager : MonoBehaviour
         };
 
         //bf.Serialize(file, data);
-        serializer.Serialize(file, data);
-        file.Dispose();
+        serializer.Serialize(writer, data);
+        writer.Close();
     }
 
     private void Load()
