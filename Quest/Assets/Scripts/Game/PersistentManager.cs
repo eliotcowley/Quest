@@ -4,19 +4,20 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System;
-//using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using System.Xml.Serialization;
 using System.Xml;
+using System.Text;
+//using System.Runtime.Serialization.Formatters.Binary;
 
-//#if NETFX_CORE
-//using WinRTLegacy.IO;
-//using XmlReader = WinRTLegacy.Xml.XmlReader;
-//using XmlWriter = WinRTLegacy.Xml.XmlWriter;
-//#else
-//using XmlReader = System.Xml.XmlReader;
-//using XmlWriter = System.Xml.XmlWriter;
-//#endif
+#if NETFX_CORE
+    using XmlReader = WinRTLegacy.Xml.XmlReader;
+    using XmlWriter = WinRTLegacy.Xml.XmlWriter;
+    using StreamWriter = WinRTLegacy.IO.StreamWriter;
+#else
+    using XmlReader = System.Xml.XmlReader;
+    using XmlWriter = System.Xml.XmlWriter;
+#endif
 
 public class PersistentManager : MonoBehaviour
 {
@@ -92,17 +93,23 @@ public class PersistentManager : MonoBehaviour
         }
 
         // TODO: Clear the save data - for debugging, remove later
-        ClearData();
+        //ClearData();
     }
 
     private void Save()
     {
         //BinaryFormatter bf = new BinaryFormatter();
         XmlSerializer serializer = new XmlSerializer(typeof(SaveData));
-        FileStream file = File.Open(Constants.SaveDataFilePath, FileMode.OpenOrCreate);
-        XmlWriterSettings settings = new XmlWriterSettings();
-        settings.Encoding = new System.Text.ASCIIEncoding();
-        XmlWriter writer = XmlWriter.Create(file, settings);
+        FileStream file = File.Open(Constants.SaveDataFilePath, FileMode.Create);
+        //XmlWriterSettings settings = new System.Xml.XmlWriterSettings();
+        //settings.Encoding = new System.Text.ASCIIEncoding();
+        StreamWriter writer = new StreamWriter(file, Encoding.ASCII);
+
+//#if NETFX_CORE
+//        XmlWriter writer = (WinRTLegacy.Xml.XmlWriter)XmlWriter.Create(file, settings);
+//#else
+//        XmlWriter writer = XmlWriter.Create(file, settings);
+//#endif
 
         SaveData data = new SaveData
         {
@@ -111,8 +118,11 @@ public class PersistentManager : MonoBehaviour
         };
 
         //bf.Serialize(file, data);
+        //serializer.Serialize(writer, data);
         serializer.Serialize(writer, data);
-        writer.Close();
+        //writer.Close();
+        writer.Dispose();
+        file.Dispose();
     }
 
     private void Load()
