@@ -164,6 +164,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
 --- !u!4 &193326479
 Transform:
   m_ObjectHideFlags: 0
@@ -550,6 +551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd8ca5bd6ba12f048b6fcd05f4058afc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loadingText: {fileID: 919759326}
   CurrentScene: 0
   audioController: {fileID: 645356792}
   persistentCamera: {fileID: 525822825}
@@ -558,9 +560,8 @@ MonoBehaviour:
   - TurnOnSound
   - TitleMenu
   - Test
-  - LevelSelect
   - Level1_2
-  loadingText: {fileID: 919759326}
+  - Level1_2
   fader: {fileID: 193326478}
   smooth: 10
   fadeTime: 1
