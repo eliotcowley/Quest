@@ -56,6 +56,7 @@ public class PersistentManager : MonoBehaviour
     private Scenes sceneToLoad;
     private int[] highScores;
     private BoolArray[] diamonds;
+    private AsyncOperation sceneLoadOp;
 
     public enum Scenes
     {
@@ -68,8 +69,6 @@ public class PersistentManager : MonoBehaviour
 
     private void Start()
     {
-        LoadScene(startScene);
-
         if (Instance != null)
         {
             Debug.LogError("ERROR: More than one PersistentManager in scene");
@@ -78,6 +77,8 @@ public class PersistentManager : MonoBehaviour
         {
             Instance = this;
         }
+
+        LoadScene(startScene);
 
         SceneManager.sceneLoaded += SceneManager_sceneLoaded;
         SceneManager.sceneUnloaded += SceneManager_sceneUnloaded;
@@ -216,7 +217,7 @@ public class PersistentManager : MonoBehaviour
 
     public void LoadScene(Scenes sceneToLoad)
     {
-        SceneManager.LoadSceneAsync(sceneNames[(int)sceneToLoad], LoadSceneMode.Additive);
+        this.sceneLoadOp = SceneManager.LoadSceneAsync(sceneNames[(int)sceneToLoad], LoadSceneMode.Additive);
         audioController.Stop();
 
         CurrentScene = sceneToLoad;
@@ -252,11 +253,17 @@ public class PersistentManager : MonoBehaviour
     private void SceneManager_sceneUnloaded(Scene scene)
     {
         persistentCamera.SetActive(true);
-        loadingText.gameObject.SetActive(true);
+        if (loadingText.gameObject != null) loadingText.gameObject.SetActive(true);
+        LoadScene(sceneToLoad);
     }
 
     private void SceneManager_sceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
     {
+        while (this.sceneLoadOp.progress < 0.9f)
+        {
+            // Spin until scene loaded
+        }
+
         if (scene.name != sceneNames[(int)Scenes.Persistent])
         {
             persistentCamera.SetActive(false);
@@ -288,7 +295,6 @@ public class PersistentManager : MonoBehaviour
     private void UnloadScene()
     {
         SceneManager.UnloadSceneAsync(sceneNames[(int)sceneToUnload]);
-        LoadScene(sceneToLoad);
     }
 }
 
