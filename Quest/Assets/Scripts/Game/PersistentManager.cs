@@ -27,6 +27,8 @@ public class PersistentManager : MonoBehaviour
     [HideInInspector]
     public Scenes CurrentScene = startScene;
 
+    [HideInInspector]
+
     [SerializeField]
     private const Scenes startScene = Scenes.TurnOnSound;
 

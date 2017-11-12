@@ -54,6 +54,7 @@ public class PlayerAttack : MonoBehaviour
     private int beatCount;
     private bool canUseMagic = true;
     private SFXMixer sfxMixer;
+    private bool isHurt = false;
 
     private void Start()
     {
@@ -120,13 +121,29 @@ public class PlayerAttack : MonoBehaviour
             }
             else
             {
-                health.ChangeHealth(-1);
-                sfxMixer.PlaySound(SFXMixer.Sounds.GhostHit);
-                if (gameObject.activeSelf)
-                {
-                    StartCoroutine(FlashRed());
-                }
+                GetHurt();
             }
+        }
+        else if (other.gameObject.tag == Constants.decorTag)
+        {
+            GetHurt();
+        }
+    }
+
+    private void GetHurt()
+    {
+        if (!isHurt)
+        {
+            isHurt = true;
+            health.ChangeHealth(-1);
+            sfxMixer.PlaySound(SFXMixer.Sounds.GhostHit);
+
+            if (gameObject.activeSelf)
+            {
+                StartCoroutine(FlashRed());
+            }
+
+            isHurt = false;
         }
     }
 

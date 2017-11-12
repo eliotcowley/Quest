@@ -20,6 +20,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private Transform backPos;
 
+    [SerializeField]
+    private float smoothSpeed = 5f;
+
     private int track;           // 0 = top, 1 = middle, 2 = bottom
     private PlayerAttack playerAttack;
 
@@ -46,6 +49,8 @@ public class PlayerMovement : MonoBehaviour
         {
             Switch();
         }
+
+        transform.position = Vector3.Lerp(transform.position, tracks[track].position, smoothSpeed * Time.deltaTime);
     }
 
     public void MoveUp()
@@ -53,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
         if (track > 0)
         {
             track--;
-            transform.position = tracks[track].position;
+            //transform.position = tracks[track].position;
         }
     }
 
@@ -62,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
         if (track < (tracks.Length - 1))
         {
             track++;
-            transform.position = tracks[track].position;
+            //transform.position = tracks[track].position;
         }
     }
 

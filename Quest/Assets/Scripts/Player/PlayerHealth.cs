@@ -6,6 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
+    [HideInInspector]
+    public int currentHealth;
+
+    [HideInInspector]
+    public static bool canRestart = false;
+
     [SerializeField]
     private int maxHealth = 3;
 
@@ -27,16 +33,8 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField]
     private string controllerAButton = "Fire1Controller";
 
-    [SerializeField]
-    private SFXMixer sfxMixer;
-
     private List<GameObject> hearts;
-
-    [HideInInspector]
-    public int currentHealth;
-
-    [HideInInspector]
-    public static bool canRestart = false;
+    private SFXMixer sfxMixer;
 
     // Use this for initialization
     void Start ()
@@ -53,6 +51,7 @@ public class PlayerHealth : MonoBehaviour
         //Debug.Log(string.Join(",", hearts.Select(h => h.name).ToArray()));
         UpdateHearts();
         //Debug.Log("Number of controllers detected: " + Input.GetJoystickNames().Length);
+        sfxMixer = SFXMixer.instance;
     }
 
     void Update()
@@ -103,7 +102,6 @@ public class PlayerHealth : MonoBehaviour
             if (currentHealth <= 0)
             {
                 // Game over
-                player.SetActive(false);
                 sfxMixer.PlaySound(SFXMixer.Sounds.PlayerDie);
 #if UNITY_ANDROID
                 restartText.text = "Tap to restart";
@@ -116,6 +114,7 @@ public class PlayerHealth : MonoBehaviour
 
                 gameOver.SetActive(true);
                 canRestart = true;
+                player.SetActive(false);
             }
         }
     }
