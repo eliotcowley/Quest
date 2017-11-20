@@ -18,6 +18,8 @@ TagManager:
   - SFXMixer
   - Barrier
   - Goal
+  - Snail
+  - Mushroom
   layers:
   - Default
   - TransparentFX

@@ -30,7 +30,10 @@ public class SpawnDecor : MonoBehaviour
 
         if (decor == null)
         {
-            Instantiate(decorPrefabs[Random.Range(0, decorPrefabs.Length)], positions[nextPosition].position, Quaternion.identity);
+            Instantiate(
+                decorPrefabs[Random.Range(0, decorPrefabs.Length)], 
+                positions[nextPosition].position, 
+                Quaternion.identity);
         }
         else
         {

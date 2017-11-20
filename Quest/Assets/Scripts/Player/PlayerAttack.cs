@@ -124,7 +124,7 @@ public class PlayerAttack : MonoBehaviour
                 GetHurt();
             }
         }
-        else if (other.gameObject.tag == Constants.decorTag)
+        else if (other.gameObject.tag == Constants.DecorTag)
         {
             GetHurt();
         }

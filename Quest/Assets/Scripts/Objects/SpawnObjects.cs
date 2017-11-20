@@ -13,6 +13,8 @@ public class SpawnObjects : MonoBehaviour
     public GameObject orangeDiamondPrefab;
     public GameObject barrierPrefab;
     public GameObject goalPrefab;
+    public GameObject snailPrefab;
+    public GameObject mushroomPrefab;
 
     [SerializeField]
     private Transform[] positions;
@@ -65,52 +67,62 @@ public class SpawnObjects : MonoBehaviour
         switch(nextPrefab.tag)
         {
             case "Coin":
-                prefab = pool.PullFromPool("Coin");
+                prefab = pool.PullFromPool(Constants.CoinTag);
                 obj = coinPrefab;
                 break;
 
             case "Enemy":
-                prefab = pool.PullFromPool("Enemy");
+                prefab = pool.PullFromPool(Constants.EnemyTag);
                 obj = ghostPrefab;
                 break;
 
             case "Heart":
-                prefab = pool.PullFromPool("Heart");
+                prefab = pool.PullFromPool(Constants.HeartTag);
                 obj = heartPrefab;
                 break;
 
             case "Star":
-                prefab = pool.PullFromPool("Star");
+                prefab = pool.PullFromPool(Constants.StarTag);
                 obj = starPrefab;
                 break;
 
             case "BlueDiamond":
-                prefab = pool.PullFromPool("BlueDiamond");
+                prefab = pool.PullFromPool(Constants.BlueDiamondTag);
                 obj = blueDiamondPrefab;
                 break;
 
             case "GreenDiamond":
-                prefab = pool.PullFromPool("GreenDiamond");
+                prefab = pool.PullFromPool(Constants.GreenDiamondTag);
                 obj = greenDiamondPrefab;
                 break;
 
             case "OrangeDiamond":
-                prefab = pool.PullFromPool("OrangeDiamond");
+                prefab = pool.PullFromPool(Constants.OrangeDiamondTag);
                 obj = orangeDiamondPrefab;
                 break;
 
             case "Barrier":
-                prefab = pool.PullFromPool("Barrier");
+                prefab = pool.PullFromPool(Constants.BarrierTag);
                 obj = barrierPrefab;
                 break;
 
             case "Goal":
-                prefab = pool.PullFromPool("Goal");
+                prefab = pool.PullFromPool(Constants.GoalTag);
                 obj = goalPrefab;
                 break;
 
+            case "Snail":
+                prefab = pool.PullFromPool(Constants.SnailTag);
+                obj = snailPrefab;
+                break;
+
+            case "Mushroom":
+                prefab = pool.PullFromPool(Constants.MushroomTag);
+                obj = mushroomPrefab;
+                break;
+
             default:
-                prefab = pool.PullFromPool("Coin");
+                prefab = pool.PullFromPool(Constants.CoinTag);
                 obj = coinPrefab;
                 break; 
         }

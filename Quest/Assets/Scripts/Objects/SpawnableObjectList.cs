@@ -15,6 +15,8 @@ public class SpawnableObjectList : MonoBehaviour
     public static GameObject orangeDiamondPrefab;
     public static GameObject barrierPrefab;
     public static GameObject goalPrefab;
+    public static GameObject snailPrefab;
+    public static GameObject mushroomPrefab;
 
     [HideInInspector]
     public static bool prefabsSet = false;
@@ -41,6 +43,8 @@ public class SpawnableObjectList : MonoBehaviour
         orangeDiamondPrefab = spawnObjects.orangeDiamondPrefab;
         barrierPrefab = spawnObjects.barrierPrefab;
         goalPrefab = spawnObjects.goalPrefab;
+        snailPrefab = spawnObjects.snailPrefab;
+        mushroomPrefab = spawnObjects.mushroomPrefab;
 
         objects = new ArrayList
         {
@@ -53,7 +57,8 @@ public class SpawnableObjectList : MonoBehaviour
                 new SpawnableObject(1, coinPrefab, 1),
                 new SpawnableObject(1, coinPrefab, 1),
                 new SpawnableObject(2, coinPrefab, 1),
-                new SpawnableObject(2, coinPrefab, 0),
+                new SpawnableObject(1, snailPrefab, 3),
+                new SpawnableObject(1, coinPrefab, 0),
                 new SpawnableObject(2, coinPrefab, 1),
                 new SpawnableObject(2, coinPrefab, 2),
                 new SpawnableObject(2, coinPrefab, 1),
@@ -68,7 +73,8 @@ public class SpawnableObjectList : MonoBehaviour
                 new SpawnableObject(1, coinPrefab, 0),
                 new SpawnableObject(1, coinPrefab, 1),
                 new SpawnableObject(1, coinPrefab, 2),
-                new SpawnableObject(2, ghostPrefab, 1),
+                new SpawnableObject(1, snailPrefab, 4),
+                new SpawnableObject(1, ghostPrefab, 1),
                 new SpawnableObject(4, ghostPrefab, 0),
                 new SpawnableObject(1, coinPrefab, 1),
                 new SpawnableObject(1, coinPrefab, 0),
